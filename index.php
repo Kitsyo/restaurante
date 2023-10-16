@@ -4,7 +4,7 @@
 
     if(isset($_GET['controller'])){
         //si no se pasa nada se muestra la página pricnipal
-        header("Location:".url."final URL");
+        //header("Location:".url."final URL");
     
     }else{
         $nombre_controller=$_GET['controller'].'Controller';
@@ -24,7 +24,7 @@
             
 
         }else{
-            header("Location:".action_default."final URL");
+            //header("Location:".action_default."final URL");
         }
     }
 
