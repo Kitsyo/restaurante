@@ -1,6 +1,6 @@
     <?php
-include_once 'controlador/pedidoControl.php';
-include_once 'config/parameters.php';
+    include_once 'controlador/pedidoControl.php';
+    include_once 'config/parameters.php';
 
     if(isset($_GET['controller'])){
         //si no se pasa nada se muestra la página pricnipal

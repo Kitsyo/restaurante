@@ -1,5 +1,5 @@
 <?php
-    define("url","url");
-    define("action_default","url");
+    define("url","http://localhost/drim/restaurante/vista/index.php");
+    define("action_default","http://localhost/drim/restaurante/vista/index.php");
 
 ?>
