@@ -2,9 +2,9 @@
     include_once 'controlador/pedidoControl.php';
     include_once 'config/parameters.php';
 
-    if(isset($_GET['controller'])){
+    if(!isset($_GET['controller'])){
         //si no se pasa nada se muestra la página pricnipal
-        //header("Location:".url."final URL");
+        header("Location:".url."?controller=pedido");
     
     }else{
         $nombre_controller=$_GET['controller'].'Controller';
@@ -20,11 +20,11 @@
                 $action = action_default;
             }
 
-            $controller->$action;
+            $controller->$action();
             
 
         }else{
-            //header("Location:".action_default."final URL");
+            header("Location:".action_default."?controller=pedido");
         }
     }
 
