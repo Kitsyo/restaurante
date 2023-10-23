@@ -7,6 +7,7 @@ class pedidoController{
         //cabecera
         
         //panel inclde
+        //Aqui ira toda las tablas y los DAO para llamar a la bbdd
 
         //footer
     }
