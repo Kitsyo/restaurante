@@ -6,7 +6,7 @@ abstract class Producto{
     const PRECIODESAYUNO = 2;
 
     protected $producto_id;
-    protected $nombre;
+    protected $nombre_producto;
     protected $categoria_id;
     protected $precio;
 
@@ -14,9 +14,9 @@ abstract class Producto{
     }
 
 /*
-    public function __construct($producto_id, $nombre, $categoria_id , $precio){
+    public function __construct($producto_id, $nombre_producto, $categoria_id , $precio){
         $this->producto_id = $producto_id;
-        $this->nombre = $nombre;
+        $this->nombre_producto = $nombre_producto;
         $this->categoria_id = $categoria_id;
         $this->precio = $precio;
     }
@@ -43,21 +43,21 @@ abstract class Producto{
     }
 
     /**
-     * Get the value of nombre
+     * Get the value of nombre_producto
      */ 
-    public function getNombre()
+    public function getNombre_producto()
     {
-        return $this->nombre;
+        return $this->nombre_producto;
     }
 
     /**
-     * Set the value of nombre
+     * Set the value of nombre_producto
      *
      * @return  self
      */ 
-    public function setNombre($nombre)
+    public function setNombre_producto($nombre_producto)
     {
-        $this->nombre = $nombre;
+        $this->nombre_producto = $nombre_producto;
 
         return $this;
     }

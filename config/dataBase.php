@@ -1,7 +1,7 @@
 <?php
 class DataBase{
     //Declaramos funcion con valores por defecto
-    public static function connect($host = 'localhost', $user = 'root', $password = '', $db = 'ikea_db'){
+    public static function connect($host = 'localhost', $user = 'root', $password = '', $db = 'restaurante'){
         $con = new mysqli($host, $user, $password, $db);
 
         if($con == false){
