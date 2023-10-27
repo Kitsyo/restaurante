@@ -1,10 +1,10 @@
     <?php
-    include_once 'controller/pedidoControl.php';
-    include_once 'config/parameters.php';
+    include_once "../restaurante/config/parameters.php";
+    include_once "../restaurante/controller/productoController.php";
 
     if(!isset($_GET['controller'])){
         //si no se pasa nada se muestra la página pricnipal
-        header("Location:".url."?controller=pedido");
+        header("Location:".url."?controller=producto");
     
     }else{
         $nombre_controller=$_GET['controller'].'Controller';
@@ -24,8 +24,7 @@
             
 
         }else{
-            header("Location:".action_default."?controller=pedido");
+            header("Location:".url."?controller=producto");
         }
     }
-
 ?>

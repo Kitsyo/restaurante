@@ -9,6 +9,8 @@ abstract class Producto{
     protected $nombre_producto;
     protected $categoria_id;
     protected $precio;
+    protected $descripcion;
+    protected $ingrediente_id;
 
     public function __construct(){
     }
@@ -105,4 +107,36 @@ abstract class Producto{
     public abstract function calculaPrecioTotal($numDias);
     public abstract function devuelvePrecioDia();
 
+
+	/**
+	 * @return mixed
+	 */
+	public function getDescripcion() {
+		return $this->descripcion;
+	}
+	
+	/**
+	 * @param mixed $descripcion 
+	 * @return self
+	 */
+	public function setDescripcion($descripcion): self {
+		$this->descripcion = $descripcion;
+		return $this;
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getIngrediente_id() {
+		return $this->ingrediente_id;
+	}
+	
+	/**
+	 * @param mixed $ingrediente_id 
+	 * @return self
+	 */
+	public function setIngrediente_id($ingrediente_id): self {
+		$this->ingrediente_id = $ingrediente_id;
+		return $this;
+	}
 }
