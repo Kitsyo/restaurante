@@ -1,7 +1,7 @@
 <?php
 include_once "Producto.php";
 
-class Entrantes extends Producto{
+class Postres extends Producto{
     public function __construct(){
     
     }

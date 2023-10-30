@@ -1,6 +1,6 @@
     <?php
-    include_once "../restaurante/config/parameters.php";
-    include_once "../restaurante/controller/productoController.php";
+    include_once "config/parameters.php";
+    include_once "controller/productoController.php";
 
     if(!isset($_GET['controller'])){
         //si no se pasa nada se muestra la página pricnipal

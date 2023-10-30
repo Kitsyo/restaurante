@@ -1,15 +1,15 @@
 <?php
-include_once "../model/productoDAO.php";
-
+include_once "model/productoDAO.php";
 //esto es una clase php
 class productoController{
     public function index(){
-        echo 'Hola';
-        $entrantes = productoDAO::getAllProductos('Entrantes');
         //cabezera
-        include_once "../view/cabecera.php";
+        include_once "view/cabecera.php";
         //Panel Pedido
-        include_once "../view/panelPedido.php";
+        $entrantes = productoDAO::getAllProductos(1);
+        $postres = productoDAO::getAllProductos(2);
+
+        include_once "view/panelPedido.php";
         //footer
         
     }
