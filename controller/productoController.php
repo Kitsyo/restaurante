@@ -6,8 +6,12 @@ class productoController{
         //cabezera
         include_once "view/cabecera.php";
         //Panel Pedido
-        $entrantes = productoDAO::getAllProductos(1);
-        $postres = productoDAO::getAllProductos(2);
+        $entrantes = productoDAO::getProductosById(1);
+        $postres = productoDAO::getProductosById(2);
+        $hamburguesas = productoDAO::getProductosById(3);
+        $veganas = productoDAO::getProductosById(4);
+        $sinGluten = productoDAO::getProductosById(5);
+
 
         include_once "view/panelPedido.php";
         //footer
