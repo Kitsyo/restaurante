@@ -135,6 +135,10 @@
                 </tr>
                 <?php } ?>  
                 </table>
+                <form>
+                    <td><button type="submit" name="add">+</td>
+                    <td><button type="submit" name="dell">-</td>
+                </form>
         </body>
     </head>
 </html>

@@ -1,0 +1,9 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 33" width="33" height="33">
+	<title>icon-minicart</title>
+	<defs>
+		<image  width="33" height="33" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAMAAABgOjJdAAAAAXNSR0IB2cksfwAAAYBQTFRFAAAADVyjClmkClmkClmkClmkClmkClmkClmkB1ehDFukClmkClmkClmkClmkC1emClmkClmkClikClmkClmkClmkClmjClmkClmkClmkClikClmkClmkClmmClmkClmkClmkClmkClmkClejClmkCliiAAD/ClmkJ22vutDlvtPnQX65ClmkClmkHmesmLnZnr3b3unzt8/ka5vIS4W8C1qkClmkdaLM////3OfyFGCoClmkClmkNXa03ejyE1+n8/f6ClmkClmk0eDuClmkClmkpcLdcJ7K/P3+9Pf76fD3rsjhD1ymKm+w+/3+6O/3zt7tt87knr7bgqrRZ5jHNHW0JmyuGWOqClmk7PL4ZZfGFmGpDlylZpjGw9bpscriZJbFClijQH645+/2wtbpnLza8vb6YpXFe6bO1+TwEF2mwdXoClmkrcfhDFulh67T+vz9bp3JCVukDlulClmkClmkClmkClikClmkClmkClmkClemClmkClmkClmkClmk8PM9XQAAAIB0Uk5TAAMxe8Dh9P4wAwVv2/9uA1fVDIr5ChC8sBAPwQ8DkpFa+lkG1gYA2v/////XK///////////d/////92v//////g9f/z/P///////////////////////77//////////yr/////////////2f//////B/9bDbcNu7EMA9NWLH0QJR4xAAABd0lEQVR4nIXU+TdCQRQH8EsLqmlRSlKKhIhQpGxFZN/XkCzZd7Il/7re1szb8v3lTXc+5505zb0PoJyqaoVSpa5Rq5SK2joQR6PVIRydXiPYNxhNiB+T0UCCerMFCWMxN2BgtYn2qTTaOdDkkAQIOZoZ4HTJAIRanLRwe2SFp5UCbV5ZgJC3vSS0FQBCWgBfB7Ps7PL7u8WixwcBdtnbF+wfGMQJhZl6AIawH44QGYkyxRiMYjFGinFW2ECFxcSkhIhDgjjWlISYhiQhZiREkveOWW47NTe/sMjUEhAnxNLyyura+sZmaGt7hwWlc+wSIrq3nz4Q/GU2iBG/DlNHGTbHXC0GWUKcnJ6d08nkLrhatnwvVC4jV9f04iYSZEu3Pt7dhnJ39/Ti4fGJLZXuFp6J/oi+MM9wmr03bxvVQq8Vesz9X5+6mD6Ft7wMyL9z42D/kASfVjxSX2bxWXgzB/BtLAhA4Yc3t9Ts6yvPPp3iL/f9KBLVP/VrYPyzKgPeAAAAAElFTkSuQmCC"/>
+	</defs>
+	<style>
+	</style>
+	<use id="Background" href="#img1" x="0" y="0"/>
+</svg>

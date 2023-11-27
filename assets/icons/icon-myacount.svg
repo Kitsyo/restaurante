@@ -1,0 +1,9 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 33" width="33" height="33">
+	<title>icon-myacount</title>
+	<defs>
+		<image  width="33" height="33" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAMAAABgOjJdAAAAAXNSR0IB2cksfwAAAX1QTFRFAAAADVyjClmkClmkClmkClmkClmkClmkB1ehDFukClmkClmkClmkClmkC1emClmkClmkClikClmkClmkClmkClmjClmkClmkClmkClikClmkClmmClmkClmkClmkClmkClmkClejClmkD1ymDVulLXGxpsPe3+rz1uPwf6nQF2KpAAD/ClmkNXa06O/2////u9HmDFqlClmkClmk/v7/V43BClmkmLnZClmkClmky9zsirDUg6vR9Pj7ClmkClmkGGKpKG2vrsjh/f7+8/f7eaTNIGisEF2mClmkClmkaZnH5e714uz0eKPNVIvAgKnQdaHMTYa9nr3b8PX50+HvMXOy+Pr84+z1xtjqzd3t7/T52eXxrMfgClmkDFul4Or0hq3SEl6nqMTfClijFGCo+fv9ssviiK7TClmkQH641+Tw+/z9ts7kGGOpCVukDlymGmSqHWarFmKpC1qkClmkClmkClmkClmkClmkClmkClemClmkClmkClmkClmkQCaSIQAAAH90Uk5TAAMwe8Dh9P4DBW/b/24DV9UMivkKELywEA/BA5KRWvpZBtb//////////wDa///////XK///eP92v//////g9f//////////8/z/////////////////////////vv//////Kv/////Z//////8H//////9bDbe7sQwD01YsfWsfbpEAAAF7SURBVHichZRnW8IwFEavLAXKEARZgiAiilgVVByAigs37r1w7wUOxN9uC21zy/L9lJycJ2mbewsgpE4ilckV9Qq5TCppgPIoVWqKRK1RlqxrdXpKHL1Oi4VGg5EqjdHQRASTuWydTbOFF6y2igJF2axFwe6oIlBUi71gOF1VDVcrK7g9ItjmxTOPmzFUmLT7OvydXQioAALdaB7soZn09hHSH4AQ3sLHCnR4AKEQDGLDXzDoIYQiMIyNkaIxipAZ5NgYC7NCNIhQDOJoNj4xmaDpqemZWcLmIEkm8wuLS8srq6m19Y1NASbRHsEtmk5s7+zuMQftC7vEISYYBzRKijzHIT88OsbGCXmXCD88jWLjjHyPND88v8DGJY/T5F68olOuOHodQHd7cyus390/cJC5W3gU6uPp+YXL6xuHCvUB7zVqzPlfnTqKdQqZbBUhm+HbwfJRUfg0kZb6MpQ/i6jnAL51uRIh9yPqW7b3NbV7v5D8L///yCP6ByreW/UGRnR7AAAAAElFTkSuQmCC"/>
+	</defs>
+	<style>
+	</style>
+	<use id="Background" href="#img1" x="0" y="0"/>
+</svg>

@@ -140,3 +140,8 @@ abstract class Producto{
 		return $this;
 	}
 }
+// para el carrito
+// public function devuelvePrecio(){
+//     return $this->Producto->getDevuelvePrecioDia()*$this->cantidad;
+//     
+// }
