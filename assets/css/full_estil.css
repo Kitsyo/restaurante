@@ -13,11 +13,11 @@
 }
 @font-face {
     font-family: "roboto";
-    src: url(fonts/Roboto-Regular.ttf);
+    src: url(../fonts/Roboto-Regular.ttf);
 }
 @font-face {
     font-family: "roboto-b";
-    src: url(fonts/Roboto-bold.ttf);
+    src: url(../fonts/Roboto-bold.ttf);
 }
 
 /*Variables CSS*/

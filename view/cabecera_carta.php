@@ -23,10 +23,7 @@
         <div class="collapse navbar-collapse text-center" id="navbar-toggler">
           <ul class="navbar-nav d-flex justify-content-center align-content-center">
             <li class="nav-item">             <!-- el action del href es necesario para mandar los enlaces a las funciones generadas -->
-              <a class="nav-link enlaces" style="color: white;" href="<?=url."?controller=producto&action=carta"?>">Carta</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link enlaces" style="color: white;" href="#destacados">Destacados</a>
+              <a class="nav-link enlaces" style="color: white;" href="<?=url."?controller=producto&action=producto"?>">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link enlaces" style="color: white;" href="#">Menú Infantil</a>

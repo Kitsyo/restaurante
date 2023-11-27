@@ -30,7 +30,7 @@
     </section>
     
 </main>
-  <section>
+  <section id="destacados">
     <div class="container mt-5 mb-5">
       <div class="row">
         <div class="col-6 d-flex justify-content-center">

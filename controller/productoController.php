@@ -20,7 +20,7 @@ class productoController{
         
     }
     public function carta(){
-        include_once "view/cabecera.php";
+        include_once "view/cabecera_carta.php";
         //panelCarta
 
         //mostrar nombre categorias (botones home)
