@@ -1,144 +1,117 @@
 
+
 <html>
-    <head>
-        <body>
-            <h1>Tabla Entrantes<h1>
-                <table border='1' style="text-align: center">
-                <tr>
-                    <th>Categoria ID</th>
-                    <th>Nombre Producto</th>
-                    <th>Descripcion</th>
-                    <th>Ingrediente ID</th>
-                    <th>Precio</th>
-                </tr>
-                <?php
-                foreach($entrantes as $entrante) {
-                ?>
-                <tr>
-                <td><?=$entrante->getCategoria_id()?></td>
-                <td><?=$entrante->getNombre_producto()?></td>
-                <td><?=$entrante->getCategoria_id()?></td>
-                <td><?=$entrante->getIngrediente_id()?></td>
-                <td><?=$entrante->getPrecio()?></td>
-                <td><button type="button">eliminar</button></td>
-                <td><button type="button">modificar</button></td>
-                </tr>
-                <?php } ?>  
-                </table>
-                </br>
-                <h1>Tabla postres<h1>
-                
-                    <table border ='1'style="text-align:center">
-                    <tr>
-                    <th>Categoria ID</th>
-                    <th>Nombre Producto</th>
-                    <th>Descripcion</th>
-                    <th>Ingrediente ID</th>
-                    <th>Precio</th>
-                </tr>
-
-                <?php
-                foreach($postres as $postre) {
-                ?>
-                <tr>
-                <td><?=$postre->getCategoria_id()?></td>
-                <td><?=$postre->getNombre_producto()?></td>
-                <td><?=$postre->getCategoria_id()?></td>
-                <td><?=$postre->getIngrediente_id()?></td>
-                <td><?=$postre->getPrecio()?></td>
-                <td><button type="button">eliminar</button></td>
-                <td><button type="button">modificar</button></td>
-                </tr>
-                <?php } ?>  
-                </table>
-
-                </table>
-                </br>
-                <h1>Tabla Hamburguesas<h1>
-                
-                    <table border ='1'style="text-align:center">
-                    <tr>
-                    <th>Categoria ID</th>
-                    <th>Nombre Producto</th>
-                    <th>Descripcion</th>
-                    <th>Ingrediente ID</th>
-                    <th>Precio</th>
-                </tr>
-
-                <?php
-                foreach($hamburguesas as $hamburguesa) {
-                ?>
-                <tr>
-                <td><?=$hamburguesa->getCategoria_id()?></td>
-                <td><?=$hamburguesa->getNombre_producto()?></td>
-                <td><?=$hamburguesa->getCategoria_id()?></td>
-                <td><?=$hamburguesa->getIngrediente_id()?></td>
-                <td><?=$hamburguesa->getPrecio()?></td>
-                <td><button type="button">eliminar</button></td>
-                <td><button type="button">modificar</button></td>
-                </tr>
-                <?php } ?>  
-                </table>
-
-                </table>
-                </br>
-                <h1>Tabla Vegana<h1>
-                
-                    <table border ='1'style="text-align:center">
-                    <tr>
-                    <th>Categoria ID</th>
-                    <th>Nombre Producto</th>
-                    <th>Descripcion</th>
-                    <th>Ingrediente ID</th>
-                    <th>Precio</th>
-                </tr>
-
-                <?php
-                foreach($veganas as $vegana) {
-                ?>
-                <tr>
-                <td><?=$vegana->getCategoria_id()?></td>
-                <td><?=$vegana->getNombre_producto()?></td>
-                <td><?=$vegana->getCategoria_id()?></td>
-                <td><?=$vegana->getIngrediente_id()?></td>
-                <td><?=$vegana->getPrecio()?></td>
-                <td><button type="button">eliminar</button></td>
-                <td><button type="button">modificar</button></td>
-                </tr>
-                <?php } ?>  
-                </table>
-
-                </table>
-                </br>
-                <h1>Tabla Sin Gluten<h1>
-                
-                    <table border ='1'style="text-align:center">
-                    <tr>
-                    <th>Categoria ID</th>
-                    <th>Nombre Producto</th>
-                    <th>Descripcion</th>
-                    <th>Ingrediente ID</th>
-                    <th>Precio</th>
-                </tr>
-
-                <?php
-                foreach($sinGluten as $sinGlut) {
-                ?>
-                <tr>
-                <td><?=$sinGlut->getCategoria_id()?></td>
-                <td><?=$sinGlut->getNombre_producto()?></td>
-                <td><?=$sinGlut->getCategoria_id()?></td>
-                <td><?=$sinGlut->getIngrediente_id()?></td>
-                <td><?=$sinGlut->getPrecio()?></td>
-                <td><button type="button">eliminar</button></td>
-                <td><button type="button">modificar</button></td>
-                </tr>
-                <?php } ?>  
-                </table>
-                <form>
-                    <td><button type="submit" name="add">+</td>
-                    <td><button type="submit" name="dell">-</td>
-                </form>
-        </body>
-    </head>
+<body>
+  <main>
+    <section>
+      <div class="container" style="height: 504px;">
+        <div id="carouselExample" class="carousel slide">
+          <div class="carousel-inner rounded">
+            <div class="carousel-item active">
+              <img src="assets/images/promo1.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/images/promo1.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/images/promo1.jpg" class="d-block w-100" alt="...">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </section>
+    
+</main>
+  <section>
+    <div class="container mt-5 mb-5">
+      <div class="row">
+        <div class="col-6 d-flex justify-content-center">
+          <a class="iconos" href="#"><img src="assets/icons/reloj.png" class="rounded me-2" alt="...">Plazo de entrega</a>
+        </div>
+        <div class="col-6 d-flex justify-content-center">
+          <a class="iconos " href="#"><img src="assets/icons/devolucion.png" class="rounded me-2" alt="...">Devoluciones</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="col-12 d-none d-md-block container rounded d-flex justify-content-center align-items-center" id="prueba">
+    <a href="#"><img src="assets/images/resenas.png" alt="..."></a>
+  </div>
+  <section>
+    <div class="container d-flex justify-content-xl-start mt-4 mb-4 justify-content-md-center justify-content-sm-center">
+      <h2><a href="#"><img class="me-4" src="assets/icons/Estrella.png" alt="..."></a>Productos estrella</h2>
+    </div>
+    <div class="container text-center d-flex justify-content-center ">
+      <div class="row">
+        <div class="col-md-6 col-xl-3 mb-4 d-flex justify-content-center">
+          <a href="#"><img class="img-fluid rounded img-escale" src="assets/images/nachos-toping.png"></a>
+        </div>
+        <div class="col-md-6 col-xl-3 mb-4 d-flex justify-content-center">
+          <a href="#"><img class="img-fluid rounded img-escale" src="assets/images/ice-1500845_1280.svg"></a>
+        </div>
+        <div class="col-md-6 col-xl-3 mb-4 d-flex justify-content-center">
+          <a href="#"><img class="img-fluid rounded img-escale" src="assets/images/tortitas.svg"></a>
+        </div>
+        <div class="col-md-6 col-xl-3 mb-4 d-flex justify-content-center">
+          <a href="#"><img class="img-fluid rounded img-escale" src="assets/images/burger.svg"></a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <nav>
+    <div class="container d-flex justify-content-xl-start mt-4 mb-4 justify-content-md-center justify-content-sm-center">
+      <h2><a href="#"><img class="me-4" src="assets/icons/comida.png" alt="..."></a>Categorías</h2>
+    </div>
+    <div class="container text-center d-flex justify-content-center ">
+      <div class="row">
+        <div class="col-md-6 col-xl-2 mb-4 d-flex mt-4 justify-content-center">
+            <button type="button" class="boton1 boton-hv"><?=$nomEntrantes?></button>
+        </div>
+        <div class="col-md-6 col-xl-2 mb-4 d-flex mt-4 justify-content-center">
+            <button type="button" class="boton2 boton-hv"><?=$nomPostres?></button>
+        </div>
+        <div class="col-md-6 col-xl-2 mb-4 d-flex mt-4 justify-content-center">
+            <button type="button" class="boton3 boton-hv"><?=$nomHamburg?></button>
+        </div>
+        <div class="col-md-6 col-xl-2 mb-4 d-flex mt-4 justify-content-center">
+            <button type="button" class="boton4 boton-hv"><?=$nomVeganas?></button>
+        </div>
+        <div class="col-md-6 col-xl-2 mb-4 d-flex mt-4 justify-content-center">
+            <button type="button" class="boton5 boton-hv"><?=$nomSinGlu?></button>
+        </div>
+        <div class="col-md-6 col-xl-2 mb-4 d-flex mt-4 justify-content-center">
+            <button type="button" class="boton6 boton-hv"><?=$nomDesayu?></button>
+        </div>
+      </div>
+    </div>
+  </nav>
+    <section>
+    <div class="border container d-flx align-items-center mt-5 d-none d-md-block" style="width: 672px; height: 183px; box-shadow: 5%;">
+      <diV class="container text-center mt-3">
+        <h3>Newsletter</h3>
+      </diV>
+      <form>
+        <div class="ms-3">
+          <label for="exampleInputEmail1" class="newsletter-text form-label">Email</label>
+        </div>
+        <div class="d-flex ms-3 mb-3">
+          <input type="email" class="form-control align-items-start" id="exampleInputEmail1"style="width: 502px;" aria-describedby="emailHelp">
+          <button type="submit" class="ms-4 boton-sub rounded boton-hover">Enviar</button>
+        </div>
+        <div class="mb-3 ms-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="newsletter-text form-check-label" for="exampleCheck1">He leído y acepto la política de privacidad</label>
+        </div>
+      </form>
+    </div> 
+    </section>
+</body>
 </html>

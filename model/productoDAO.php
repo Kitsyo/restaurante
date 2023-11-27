@@ -33,6 +33,22 @@ class productoDAO{
         }
         return $res;
     }
+    public static function getNomCatById($id){
+        //preparamos la consulta
+        $con = DataBase::connect(); 
+
+        $stmt = $con->prepare("SELECT nombre_categoria FROM categorias WHERE categoria_id = ?");
+        $stmt->bind_param("i",$id);
+
+        //ejecutamos la consulta
+        $stmt->execute();
+        $result=$stmt->get_result()->fetch_object()->nombre_categoria;
+        $con->close();
+
+        //Alamcenamos el resultado en una lista
+
+        return $result;
+    }
     public static function deleteProductById($id){
         $con = DataBase::connect(); 
 

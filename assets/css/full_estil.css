@@ -5,20 +5,19 @@
 @font-face {
     font-family: "cocogose";
     
-    src: url(/assets/fonts/Cocogoose\ Pro-trial.ttf);
+    src: url(../fonts/Cocogoose\ Pro-trial.ttf);
 }
 @font-face {
     font-family: "cocogose2";
-    
-    src: url(/assets/fonts/Cocogoose\ Pro\ Italic-trial.ttf);
+    src: url(../fonts/Cocogoose\ Pro\ Italic-trial.ttf);
 }
 @font-face {
     font-family: "roboto";
-    src: url(/assets/fonts/Roboto-Regular.ttf);
+    src: url(fonts/Roboto-Regular.ttf);
 }
 @font-face {
     font-family: "roboto-b";
-    src: url(/assets/fonts/Roboto-bold.ttf);
+    src: url(fonts/Roboto-bold.ttf);
 }
 
 /*Variables CSS*/
@@ -78,24 +77,24 @@ main{
     height: 55px;
     background-color: #AECFF5;
     border:none;
-    font-family: "cocogose2";
-    color: #000000;
+    font-family: "cocogose";
+    color: #365A65;
 }
 .boton2{
     width: 173.68px;
     height: 55px;
     background-color: #BAAEF5;
     border:none;
-    font-family: "cocogose2";
-    color: #000000;
+    font-family: "cocogose";
+    color: #365A65;
 }
 .boton3{
     width: 173.68px;
     background-color: #AEB9F5;
     height: 55px;
     border:none;
-    font-family: "cocogose2";
-    color: #000000;
+    font-family: "cocogose";
+    color: #365A65;
 }
 .boton4{
     width: 173.68px;
@@ -103,24 +102,24 @@ main{
     background-color: #AEE5F5;
     border:none;
     color: #004797;
-    font-family: "cocogose2";
-    color: #000000;
+    font-family: "cocogose";
+    color: #365A65;
 }
 .boton5{
     width: 173.68px;
     height: 55px;
     background-color: #D1AEF5;
     border:none;
-    font-family: "cocogose2";
-    color: #000000;
+    font-family: "cocogose";
+    color: #365A65;
 }
 .boton6{
     width: 173.68px;
     height: 55px;
     background-color: #EDAEF5;
     border:none;
-    font-family: "cocogose2";
-    color: #000000;
+    font-family: "cocogose";
+    color: #365A65;
 }
 .boton-sub{
     width: 95.44px;
@@ -128,7 +127,7 @@ main{
     background-color: #004797;
     border:none;
     color: #ffffff;
-    font-family: "roboto";
+    font-family: "cocogose";
 }
 h2{
     font-family: "cocogose";
