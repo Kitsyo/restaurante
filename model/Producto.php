@@ -11,18 +11,10 @@ abstract class Producto{
     protected $precio;
     protected $descripcion;
     protected $ingrediente_id;
+    protected $imagen_producto;
 
     public function __construct(){
     }
-
-/*
-    public function __construct($producto_id, $nombre_producto, $categoria_id , $precio){
-        $this->producto_id = $producto_id;
-        $this->nombre_producto = $nombre_producto;
-        $this->categoria_id = $categoria_id;
-        $this->precio = $precio;
-    }
-*/
 
     /**
      * Get the value of producto_id
@@ -137,6 +129,13 @@ abstract class Producto{
 	 */
 	public function setIngrediente_id($ingrediente_id): self {
 		$this->ingrediente_id = $ingrediente_id;
+		return $this;
+	}
+    public function getImagen_producto() {
+		return $this->imagen_producto;
+	}
+    public function setImagen_producto($imagen_producto): self {
+		$this->imagen_producto = $imagen_producto;
 		return $this;
 	}
 }

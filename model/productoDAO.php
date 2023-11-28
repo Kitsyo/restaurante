@@ -25,12 +25,21 @@ class productoDAO{
             $obj="Entrantes";
         }elseif($id = 2){
             $obj="Postres";
+        }elseif($id = 3){
+            $obj="Hamburguesas";
+        }elseif($id = 4){
+            $obj="Veganas";
+        }elseif($id = 5){
+            $obj="Sin gluten";
+        }elseif($id = 6){
+            $obj="Desayunos";
         }
         // arreglar el fetch para los resutlatos en el array
         while($productoDB = $result->fetch_object($obj)){
             $res[] = $productoDB;
             
         }
+        
         return $res;
     }
     public static function getNomCatById($id){

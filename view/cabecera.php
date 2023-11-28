@@ -16,7 +16,7 @@
   <div class="container-fluid">
     <nav class="navbar navbar-expand-md">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img src="assets/images/logo.png" alt="Logo de la pagina web"></a>
+        <a class="navbar-brand" href="<?=url."?controller=producto&action=producto"?>"><img src="assets/images/logo.png" alt="Logo de la pagina web"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -28,9 +28,6 @@
             <li class="nav-item">
               <a class="nav-link enlaces" style="color: white;" href="#destacados">Destacados</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link enlaces" style="color: white;" href="#">Menú Infantil</a>
-            </li>
           </ul>
           <form class="d-flex justify-content-end order-first align-items-center" role="search">
             <input class="form-control me-2" type="search" placeholder="Search">
@@ -38,7 +35,7 @@
           </form>
           <div class=" row m-2">
             <div class="col-12 col-md-6">
-              <a class="nav-link" href="carrito.html"><img src="assets/icons/icon-minicart.svg"></a>
+              <a class="nav-link" href="<?=url."?controller=producto&action=carrito"?>"><img src="assets/icons/icon-minicart.svg"></a>
             </div>
             <div class="col-12 col-md-6">
               <a class="nav-link" href="#"><img src="assets/icons/icon-myacount.svg"></a>
