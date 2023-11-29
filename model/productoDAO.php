@@ -58,6 +58,18 @@ class productoDAO{
 
         return $result;
     }
+    public static function updateProduct($id,$nombre,$descripcion,$precio,$catId){
+        $con = DataBase::connect(); 
+
+        $stmt = $con->prepare("UPDATE producto SET producto_id= ?,nombre_producto= ?,descripcion= ?,precio= ?,categoria_id= ?,imagen_producto= ? WHERE categoria_id = ?");
+        $stmt->bind_param("issdis",$id,$nombre,$descripcion,$precio,$catId); //preguntar si el campo imagen lo pongo i o lo dejo vacio
+
+        //ejecutamos la consulta
+        $stmt->execute();
+        $result=$stmt->get_result();
+        $con->close();
+        return $result;
+    }
     public static function deleteProductById($id){
         $con = DataBase::connect(); 
 

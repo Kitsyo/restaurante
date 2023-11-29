@@ -35,7 +35,7 @@
           </form>
           <div class=" row m-2">
             <div class="col-12 col-md-6">
-              <a class="nav-link" href="<?=url."?controller=producto&action=carrito"?>"><img src="assets/icons/icon-minicart.svg"></a>
+            <a class="nav-link" href="<?=url."?controller=producto&action=carrito"?>"><?=count($_SESSION['seleccioenes'])?><img src="assets/icons/icon-minicart.svg"></a>
             </div>
             <div class="col-12 col-md-6">
               <a class="nav-link" href="#"><img src="assets/icons/icon-myacount.svg"></a>

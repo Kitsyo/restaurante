@@ -3,6 +3,26 @@ include_once "model/productoDAO.php";
 //esto es una clase php
 class productoController{
     public function index(){
+
+        //iniciamos y tratamos sesison
+        //iniciamos la sesison
+        session_start();
+
+        if(isset($_SESSION['selecciones'])){
+            $_SESSION['selecciones'] = array();
+        }else{
+            if(isset($_POST['id'])){
+                if($_POST['tipo']== 'JUEGO'){
+                    $pedido = new Pedido(productoDAO::getProductosById($_POST['id']));
+                }
+                array_push($_SESSION['selecciones'], $pedido);
+            }
+        }
+
+
+
+
+
         //cabezera
         include_once "view/cabecera.php";
         //Panel Pedido
@@ -55,10 +75,33 @@ class productoController{
         
     }
     public function compra(){
-        echo 'pagina de compra';
+        session_start();
+        //cabecera
+        include_once "view/cabecera_carrito.php";
+
+        //panel
+        include_once "view/panelCompra.php";
+
+        //footer
+        include_once "view/footer.php";
     }
     public function eliminar(){
-        echo 'Producto Eliminado';
+        // echo 'Producto Eliminado';
+        if(isset($_POST['id'])){
+            $id_product = $_POST['id'];
+            productoDAO::deleteProductById($id_product);
+            header("Location:".url.'?controller=producto');
+        }
+    }
+    public function actualizar(){
+        $id = $_POST['id'];
+        $nombre = $_POST['nombre'];
+        $descripcion = $_POST['descripcion'];
+        $precio = $_POST['precio'];
+        $catId = $_POST['catId'];
+
+        productoDAO::updateProduct($id,$nombre,$descripcion,$precio,$catId);
+        header("Location:".url.'?controller=producto');
     }
 }
 ?>

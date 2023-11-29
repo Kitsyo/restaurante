@@ -12,7 +12,7 @@
         <?php foreach($entrantes as $entrante){?>
         <div class="col-md-6 col-xl-3 mb-4 d-flex justify-content-center">
           <div class="card" style="width: 18rem;">
-            <img style="height:auto;" src="assets/img_product/<?=$entrante->getImagen_producto();?>" class="card-img-top" alt="...">
+            <img src="assets/img_product/<?=$entrante->getImagen_producto();?>" class="card-img-top d-block" alt="...">
             <div class="card-body">
               <p class="card-text"><?=$entrante->getNombre_producto()?></p>
               <p><img src="assets/icons/fav2.svg"></p>
