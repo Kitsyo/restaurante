@@ -1,6 +1,3 @@
-
-
-<html>
 <body>
   <main>
     <section>

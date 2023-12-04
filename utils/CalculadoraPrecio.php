@@ -6,5 +6,6 @@ class CalculadoraPrecios{
         foreach($pedidos as $pedido){
             $precioTotal += $precioTotal;
         }
+        return $precioTotal;
     }
 }

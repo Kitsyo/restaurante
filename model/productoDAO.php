@@ -3,44 +3,42 @@ include_once "config/dataBase.php";
 include_once "Producto.php";
 include_once "entrantes.php";
 include_once "postres.php";
+include_once "hamburguesas.php";
+include_once "sinGluten.php";
+include_once "veganas.php";
+include_once "desayunos.php";
 
 
 class productoDAO{
-    public static function getProductosById($id){
-        //preparamos la consulta
+    public static function getProductById($id){
+        //Preparamos la consulta para saber la categoria
         $con = DataBase::connect(); 
 
-        $stmt = $con->prepare("SELECT * FROM producto WHERE categoria_id = ?");
+        $stmt = $con->prepare("SELECT nombre_categoria FROM categorias WHERE categoria_id = ?");
         $stmt->bind_param("i",$id);
 
         //ejecutamos la consulta
         $stmt->execute();
+        $nomCat=$stmt->get_result()->fetch_object()->nombre_categoria;
+        // var_dump($nomCat);
+        //consulta para el producto
+        $stmt = $con->prepare("SELECT * FROM producto WHERE categoria_id = ?");
+        $stmt->bind_param("i",$id);
+        
+        //ejeccutamos consulta
+        $stmt->execute();
         $result=$stmt->get_result();
+        
         $con->close();
 
-        //Alamcenamos el resultado en una lista
-        $res=[];
-        $obj = "";
-        if($id = 1){
-            $obj="Entrantes";
-        }elseif($id = 2){
-            $obj="Postres";
-        }elseif($id = 3){
-            $obj="Hamburguesas";
-        }elseif($id = 4){
-            $obj="Veganas";
-        }elseif($id = 5){
-            $obj="Sin gluten";
-        }elseif($id = 6){
-            $obj="Desayunos";
-        }
-        // arreglar el fetch para los resutlatos en el array
-        while($productoDB = $result->fetch_object($obj)){
-            $res[] = $productoDB;
+        $producto = $result->fetch_object($nomCat);
+        $res[] = $producto;
+        while($producto = $result->fetch_object($nomCat)){
+            $res[] = $producto;
             
         }
-        
         return $res;
+
     }
     public static function getNomCatById($id){
         //preparamos la consulta
@@ -82,4 +80,5 @@ class productoDAO{
         $con->close();
         return $result;
     }
+    
 }

@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html>
 <body>
   <section>
 
@@ -9,7 +8,8 @@
     </div>
     <div class="container text-center d-flex justify-content-center ">
       <div class="row">
-        <?php foreach($entrantes as $entrante){?>
+        <?php
+        foreach($entrantes as $entrante){?>
         <div class="col-md-6 col-xl-3 mb-4 d-flex justify-content-center">
           <div class="card" style="width: 18rem;">
             <img src="assets/img_product/<?=$entrante->getImagen_producto();?>" class="card-img-top d-block" alt="...">
@@ -18,7 +18,9 @@
               <p><img src="assets/icons/fav2.svg"></p>
               <p><a href="#" class="col card-link link-cat"><?=$nomEntrantes?></a></p>
               <p class="card-text precio-carta"><?=$entrante->getPrecio()?> €</p>
-              <a href="#" class="container d-flex justify-content-center align-items-center boton-comp rounded boton-hover" type="button">Comprar</a>
+              <form action="<?=url."?controller=producto&action=carta"?>">
+                <button class="container d-flex justify-content-center align-items-center boton-comp rounded boton-hover" type="submit">Comprar
+              </form>
             </div>
           </div>
         </div>
@@ -134,4 +136,3 @@
     </div> 
     </section>
 </body>
-</html>
