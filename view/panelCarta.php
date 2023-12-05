@@ -18,7 +18,9 @@
               <p><img src="assets/icons/fav2.svg"></p>
               <p><a href="#" class="col card-link link-cat"><?=$nomEntrantes?></a></p>
               <p class="card-text precio-carta"><?=$entrante->getPrecio()?> €</p>
-              <form action="<?=url."?controller=producto&action=carta"?>">
+              <form action="<?=url."?controller=producto&action=prueba"?>" method='post'>
+                <input type='hidden' name='categoria_id' value <?=$entrante->getCategoria_id()?>>
+                <input type='hidden' name='producto_id' value <?=$entrante->getProducto_id()?>>
                 <button class="container d-flex justify-content-center align-items-center boton-comp rounded boton-hover" type="submit">Comprar
               </form>
             </div>

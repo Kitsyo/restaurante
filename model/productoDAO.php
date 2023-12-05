@@ -13,13 +13,8 @@ class productoDAO{
     public static function getProductById($id){
         //Preparamos la consulta para saber la categoria
         $con = DataBase::connect(); 
-
-        $stmt = $con->prepare("SELECT nombre_categoria FROM categorias WHERE categoria_id = ?");
-        $stmt->bind_param("i",$id);
-
-        //ejecutamos la consulta
-        $stmt->execute();
-        $nomCat=$stmt->get_result()->fetch_object()->nombre_categoria;
+        $nomCat = productoDAO::getNomCatById(1);
+        
         // var_dump($nomCat);
         //consulta para el producto
         $stmt = $con->prepare("SELECT * FROM producto WHERE categoria_id = ?");
@@ -51,7 +46,7 @@ class productoDAO{
         $stmt->execute();
         $result=$stmt->get_result()->fetch_object()->nombre_categoria;
         $con->close();
-
+        // var_dump($result);
         //Alamcenamos el resultado en una lista
 
         return $result;
@@ -79,6 +74,34 @@ class productoDAO{
         $result=$stmt->get_result();
         $con->close();
         return $result;
+    }
+    public static function getProductByIdAndCat($producto_id, $categoria_id){
+        //Preparamos la consulta para saber la categoria
+        $con = DataBase::connect(); 
+        
+        // var_dump($nomCat);
+        //consulta para el producto
+        $stmt = $con->prepare("SELECT * FROM producto WHERE categoria_id = ?");
+        $stmt->bind_param("i",$producto_id);
+        
+        //ejeccutamos consulta
+        $stmt->execute();
+        $result=$stmt->get_result();
+        
+        $conCategoria = $con->prepare("SELECT nombre_categoria FROM categorias WHERE categoria_id = ?");
+        $conCategoria->bind_param("i",$categoria_id); 
+
+        $conCategoria->execute();
+        //recogemos el nombre de la categoria
+        $categoria = $conCategoria->get_result()->fetch_object()->nombre_categoria;
+        // var_dump($categoria);
+        //indicamos que el resultado de la consulta es un object de nuestra categoria extrauida en la anterior consulta
+        $result = $result->fetch_object($categoria);
+
+        $con->close();
+
+        return $result;
+
     }
     
 }

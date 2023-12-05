@@ -22,9 +22,8 @@
                 <!-- Añadimos un boton por fila -->
                 <td>
                     <form action=<?=url.'?controller=producto&action=sel'?> method='post'>
-                        <input type='hidden' name='id' value= <?=$product->getProducto_id()?>>
-                        <input type='hidden' name=''>
-                        <input type='hidden' name='id' value= <?=$product->getCategoria_id()?>>
+                        <input type='hidden' name='categoria_id' value <?=$pedido->getCategoria_id()?>>
+                        <input type='hidden' name='producto_id' value <?=$pedido->getProducto_id()?>>
                         <button class="bet-button w3-black w3-section" type="submit">Añadir</button>
                     </form>
                 </td>
