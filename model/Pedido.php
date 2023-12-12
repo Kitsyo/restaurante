@@ -1,5 +1,5 @@
 <?php
-
+include_once 'model/Producto.php';
 class Pedido{
 
     private $producto;
@@ -8,13 +8,21 @@ class Pedido{
 
     public function __construct($producto){
         $this->producto=$producto;
+        // var_dump($producto);
     }
 
     /**
      * Get the value of producto
      */
     public function getProducto(){
+        // var_dump($this->producto);
         return $this->producto;
+    }
+    public function getProductoId(){
+        return $this->producto->producto_id;
+    }
+    public function getCategoriaId(){
+        return $this->producto->categoria_id;
     }
 
     /**
@@ -32,5 +40,10 @@ class Pedido{
      */
     public function getCantidad(){
         return $this->cantidad;
+    }
+    public function setCantidad($cantidad){
+        $this->cantidad = $cantidad;
+
+        return $this;
     }
 }

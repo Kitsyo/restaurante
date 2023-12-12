@@ -11,9 +11,12 @@
             </tr>
 
             <?php
-            foreach($_SESSION['selecciones'] as $pedido){?>
+            foreach($_SESSION['selecciones'] as $pedido1){
+                $pedido = unserialize($pedido1);
+                var_dump($pedido1);
+                ?>
             <tr>
-                <td><?=$pedido->getProducto()->getProducto_id()?></td>
+                <td><?=$pedido->getProducto()->getProductoId()?></td>
                 <td><?=$pedido->getProducto()->getNombre_producto()?></td>
                 <td><?=$pedido->getProducto()->getDescripcion()?></td>
                 <td><?=$pedido->getProducto()->getPrecio()?></td>
@@ -22,7 +25,6 @@
                 <!-- Añadimos un boton por fila -->
                 <td>
                     <form action=<?=url.'?controller=producto&action=sel'?> method='post'>
-                        <input type='hidden' name='categoria_id' value <?=$pedido->getCategoria_id()?>>
                         <input type='hidden' name='producto_id' value <?=$pedido->getProducto_id()?>>
                         <button class="bet-button w3-black w3-section" type="submit">Añadir</button>
                     </form>

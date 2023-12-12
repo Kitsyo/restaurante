@@ -19,9 +19,9 @@ abstract class Producto{
     /**
      * Get the value of producto_id
      */ 
-    public function getProducto_id()
-    {
+    public function getProducto_id(){
         return $this->producto_id;
+        
     }
 
     /**
