@@ -65,11 +65,8 @@ class productoDAO{
         $con->close();
         // var_dump($nomCat);
         $producto = $result->fetch_object($nomCat);
-        $res[] = $producto;
-        while($producto = $result->fetch_object($nomCat)){
-            $res[] = $producto;
-        }
-        return $res;
+        
+        return $producto;
 
     }
     public static function updateProduct($id,$nombre,$descripcion,$precio,$catId){

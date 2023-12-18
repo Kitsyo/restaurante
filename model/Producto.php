@@ -10,7 +10,6 @@ abstract class Producto{
     protected $categoria_id;
     protected $precio;
     protected $descripcion;
-    protected $ingrediente_id;
     protected $imagen_producto;
 
     public function __construct(){
@@ -116,21 +115,6 @@ abstract class Producto{
 		return $this;
 	}
 
-	/**
-	 * @return mixed
-	 */
-	public function getIngrediente_id() {
-		return $this->ingrediente_id;
-	}
-	
-	/**
-	 * @param mixed $ingrediente_id 
-	 * @return self
-	 */
-	public function setIngrediente_id($ingrediente_id): self {
-		$this->ingrediente_id = $ingrediente_id;
-		return $this;
-	}
     public function getImagen_producto() {
 		return $this->imagen_producto;
 	}

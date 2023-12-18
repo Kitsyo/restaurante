@@ -1,7 +1,7 @@
 <body>
   <main>
     <section>
-      <div class="container" style="height: 504px;">
+      <div class="container">
         <div id="carouselExample" class="carousel slide">
           <div class="carousel-inner rounded">
             <div class="carousel-item active">
@@ -49,16 +49,16 @@
     <div class="container text-center d-flex justify-content-center ">
       <div class="row">
         <div class="col-md-6 col-xl-3 mb-4 d-flex justify-content-center">
-          <a href="#"><img class="img-fluid rounded img-escale" src="assets/images/nachos-toping.png"></a>
+          <a href="#"><img class="img-fluid rounded-4 img-escale" src="assets/images/nachos-toping.png"></a>
         </div>
         <div class="col-md-6 col-xl-3 mb-4 d-flex justify-content-center">
-          <a href="#"><img class="img-fluid rounded img-escale" src="assets/images/ice-1500845_1280.svg"></a>
+          <a href="#"><img class="img-fluid rounded-4 img-escale" src="assets/images/ice-1500845_1280.svg"></a>
         </div>
         <div class="col-md-6 col-xl-3 mb-4 d-flex justify-content-center">
-          <a href="#"><img class="img-fluid rounded img-escale" src="assets/images/tortitas.svg"></a>
+          <a href="#"><img class="img-fluid rounded-4 img-escale" src="assets/images/tortitas.svg"></a>
         </div>
         <div class="col-md-6 col-xl-3 mb-4 d-flex justify-content-center">
-          <a href="#"><img class="img-fluid rounded img-escale" src="assets/images/burger.svg"></a>
+          <a href="#"><img class="img-fluid rounded-4 img-escale" src="assets/images/burger.svg"></a>
         </div>
       </div>
     </div>

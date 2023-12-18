@@ -3,6 +3,7 @@ include_once 'model/Producto.php';
 class Pedido{
 
     private $producto;
+
     private $cantidad = 1;
 
 
@@ -10,40 +11,44 @@ class Pedido{
         $this->producto=$producto;
         // var_dump($producto);
     }
-
     /**
      * Get the value of producto
-     */
-    public function getProducto(){
-        // var_dump($this->producto);
+     */ 
+    public function getProducto()
+    {
         return $this->producto;
-    }
-    public function getProductoId(){
-        return $this->producto->producto_id;
-    }
-    public function getCategoriaId(){
-        return $this->producto->categoria_id;
     }
 
     /**
-     * Set value of preoducto
-     * 
-     * @return self
-     */
-    public function setProducto($producto){
+     * Set the value of producto
+     *
+     * @return  self
+     */ 
+    public function setProducto($producto)
+    {
         $this->producto = $producto;
 
         return $this;
     }
+
     /**
-     * Get the value of canidad
-     */
-    public function getCantidad(){
+     * Get the value of cantidad
+     */ 
+    public function getCantidad()
+    {
         return $this->cantidad;
     }
-    public function setCantidad($cantidad){
+
+    /**
+     * Set the value of cantidad
+     *
+     * @return  self
+     */ 
+    public function setCantidad($cantidad)
+    {
         $this->cantidad = $cantidad;
 
         return $this;
     }
+
 }

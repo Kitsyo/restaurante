@@ -15,7 +15,7 @@
         <?php
         foreach($entrantes as $prod){?>
         <div class="col-md-6 col-xl-3 mb-4 d-flex justify-content-center">
-          <div class="card" style="width: 18rem;">
+          <div class="card border-sty" style="width: 18rem">
             <img src="assets/img_product/<?=$prod->getImagen_producto();?>" class="card-img-top d-block" alt="...">
             <div class="card-body">
               <p class="card-text"><?=$prod->getNombre_producto()?></p>
@@ -33,70 +33,90 @@
         <?php } ?>
         <?php foreach($postres as $postre){?>
         <div class="col-md-6 col-xl-3 mb-4 d-flex justify-content-center">
-          <div class="card" style="width: 18rem;">
+          <div class="card border-sty" style="width: 18rem;">
             <img src="assets/images/macarrones.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <p class="card-text"><?=$postre->getNombre_producto()?></p>
               <p><img src="assets/icons/fav2.svg"></p>
               <p><a href="#" class="col card-link link-cat"><?=$postre->getDescripcion()?></a></p>
               <p class="card-text precio-carta"><?=$postre->getPrecio()?> €</p>
-              <a href="#" class="container d-flex justify-content-center align-items-center boton-comp rounded boton-hover" type="button">Comprar</a>
+              <form action="<?=url."?controller=producto&action=prueba"?>" method='post'>
+                <input type='hidden' name='categoria_id' value=" <?=$postre->getCategoria_id()?>">
+                <input type='hidden' name='producto_id' value=" <?=$postre->getProducto_id()?>">
+                <button class="container d-flex justify-content-center align-items-center boton-comp rounded boton-hover" type="submit">Comprar
+              </form>
             </div>
           </div>
         </div>
         <?php } ?>
         <?php foreach($hamburguesas as $hamburguesa){?>
         <div class="col-md-6 col-xl-3 mb-4 d-flex justify-content-center">
-          <div class="card" style="width: 18rem;">
+          <div class="card border-sty" style="width: 18rem;">
             <img src="assets/images/macarrones.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <p class="card-text"><?=$hamburguesa->getNombre_producto()?></p>
               <p><img src="assets/icons/fav2.svg"></p>
               <p><a href="#" class="col card-link link-cat"><?=$hamburguesa->getDescripcion()?></a></p>
               <p class="card-text precio-carta"><?=$hamburguesa->getPrecio()?> €</p>
-              <a href="#" class="container d-flex justify-content-center align-items-center boton-comp rounded boton-hover" type="button">Comprar</a>
+              <form action="<?=url."?controller=producto&action=prueba"?>" method='post'>
+                <input type='hidden' name='categoria_id' value=" <?=$hamburguesa->getCategoria_id()?>">
+                <input type='hidden' name='producto_id' value=" <?=$hamburguesa->getProducto_id()?>">
+                <button class="container d-flex justify-content-center align-items-center boton-comp rounded boton-hover" type="submit">Comprar
+              </form>
             </div>
           </div>
         </div>
         <?php } ?>
         <?php foreach($veganas as $vegana){?>
         <div class="col-md-6 col-xl-3 mb-4 d-flex justify-content-center">
-          <div class="card" style="width: 18rem;">
+          <div class="card border-sty" style="width: 18rem;">
             <img src="assets/images/macarrones.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <p class="card-text"><?=$vegana->getNombre_producto()?></p>
               <p><img src="assets/icons/fav2.svg"></p>
               <p><a href="#" class="col card-link link-cat"><?=$vegana->getDescripcion()?></a></p>
               <p class="card-text precio-carta"><?=$vegana->getPrecio()?> €</p>
-              <a href="#" class="container d-flex justify-content-center align-items-center boton-comp rounded boton-hover" type="button">Comprar</a>
+              <form action="<?=url."?controller=producto&action=prueba"?>" method='post'>
+                <input type='hidden' name='categoria_id' value=" <?=$prod->getCategoria_id()?>">
+                <input type='hidden' name='producto_id' value=" <?=$prod->getProducto_id()?>">
+                <button class="container d-flex justify-content-center align-items-center boton-comp rounded boton-hover" type="submit">Comprar
+              </form>
             </div>
           </div>
         </div>
         <?php } ?>
         <?php foreach($sinGluten as $sinGlu){?>
         <div class="col-md-6 col-xl-3 mb-4 d-flex justify-content-center">
-          <div class="card" style="width: 18rem;">
+          <div class="card border-sty" style="width: 18rem;">
             <img src="assets/images/macarrones.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <p class="card-text"><?=$sinGlu->getNombre_producto()?></p>
               <p><img src="assets/icons/fav2.svg"></p>
               <p><a href="#" class="col card-link link-cat"><?=$sinGlu->getDescripcion()?></a></p>
               <p class="card-text precio-carta"><?=$sinGlu->getPrecio()?> €</p>
-              <a href="#" class="container d-flex justify-content-center align-items-center boton-comp rounded boton-hover" type="button">Comprar</a>
+              <form action="<?=url."?controller=producto&action=prueba"?>" method='post'>
+                <input type='hidden' name='categoria_id' value=" <?=$prod->getCategoria_id()?>">
+                <input type='hidden' name='producto_id' value=" <?=$prod->getProducto_id()?>">
+                <button class="container d-flex justify-content-center align-items-center boton-comp rounded boton-hover" type="submit">Comprar
+              </form>
             </div>
           </div>
         </div>
         <?php } ?>
         <?php foreach($desayunos as $desayuno){?>
         <div class="col-md-6 col-xl-3 mb-4 d-flex justify-content-center">
-          <div class="card" style="width: 18rem;">
+          <div class="card border-sty" style="width: 18rem;">
             <img src="assets/images/macarrones.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <p class="card-text"><?=$desayuno->getNombre_producto()?></p>
               <p><img src="assets/icons/fav2.svg"></p>
               <p><a href="#" class="col card-link link-cat"><?=$desayuno->getDescripcion()?></a></p>
               <p class="card-text precio-carta"><?=$desayuno->getPrecio()?> €</p>
-              <a href="#" class="container d-flex justify-content-center align-items-center boton-comp rounded boton-hover" type="button">Comprar</a>
+              <form action="<?=url."?controller=producto&action=prueba"?>" method='post'>
+                <input type='hidden' name='categoria_id' value=" <?=$prod->getCategoria_id()?>">
+                <input type='hidden' name='producto_id' value=" <?=$prod->getProducto_id()?>">
+                <button class="container d-flex justify-content-center align-items-center boton-comp rounded boton-hover" type="submit">Comprar
+              </form>
             </div>
           </div>
         </div>

@@ -90,6 +90,7 @@ class productoController{
     public function prueba(){
         include_once "model/Producto.php";
         include_once "model/Pedido.php";
+        include_once "model/PedidoDetalle.php";
         session_start();
         if (!isset($_SESSION['selecciones'])){
             $_SESSION['selecciones'] = array();
@@ -104,13 +105,9 @@ class productoController{
                     if($pedido != null){
                         $pedido_existe = false;
                     }
-                    // $ped=array('producto_id'=>$pedido->getProducto(),'cantidad'=>$cantidad);
 
-                    // $_SESSION['selecciones'] = array();
-                    array_push($_SESSION['selecciones'], serialize($pedido));
-                    // foreach ($_SESSION['selecciones'] as $pedido) {
-                    
-                    // }   
+                    $_SESSION['selecciones'] = array();
+                    array_push($_SESSION['selecciones'],  serialize($pedido));  
             }
                 header("Location:".url."?controller=producto&action=carta");
             }else{
@@ -127,23 +124,5 @@ class productoController{
         setcookie('UltimoPedido',$_POST['cantidadFinal'],3600);
 
     }
-    // public function actualizar(){
-    //     $id = $_POST['id'];
-    //     $nombre = $_POST['nombre'];
-    //     $descripcion = $_POST['descripcion'];
-    //     $precio = $_POST['precio'];
-    //     $catId = $_POST['catId'];
-
-    //     productoDAO::updateProduct($id,$nombre,$descripcion,$precio,$catId);
-    //     header("Location:".url.'?controller=producto');
-    // }
-    // public function eliminar(){
-    //     // echo 'Producto Eliminado';
-    //     if(isset($_POST['id'])){
-    //         $id_product = $_POST['id'];
-    //         productoDAO::deleteProductById($id_product);
-    //         header("Location:".url.'?controller=producto');
-    //     }
-    // }
 }
 ?>

@@ -38,6 +38,11 @@
     transform: scale(0.9);
     transition: 0.5s;
 }
+.border-sty:hover{
+    border-color: #d3d0d0;
+    border-width: 1px;
+    transition: 0.5s;
+}
 /* header */
 main{
     margin-left: 50px;
@@ -67,6 +72,8 @@ main{
     width: 1175px;
     margin-top: 30px;
 }
+/* body */
+
 /* botones */
 .boton-hv{
     transform: scale(1.0);
@@ -171,7 +178,9 @@ h3{
     color:#365A65;
     font-family: "roboto";
 }
-
+.card{
+    border-color: transparent;
+}
 .boton-comp{
     color: #ffffff;
     font-family: "roboto";
