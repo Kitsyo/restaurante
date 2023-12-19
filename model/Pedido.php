@@ -50,5 +50,4 @@ class Pedido{
 
         return $this;
     }
-
 }

@@ -87,7 +87,7 @@ class productoController{
         include_once "view/footer.php";
         
     }
-    public function prueba(){
+    public function carritoDetalle(){
         include_once "model/Producto.php";
         include_once "model/Pedido.php";
         include_once "model/PedidoDetalle.php";
@@ -96,19 +96,29 @@ class productoController{
             $_SESSION['selecciones'] = array();
         }else{
             if (isset($_POST['producto_id'])){
+            // $_SESSION['selecciones'] = array();
                 $producto_id = $_POST['producto_id'];
                 $categoria_id = $_POST['categoria_id'];
+                $pedido_existe = false;
 
-                if($producto_id){
-                    $pedido = new Pedido(ProductoDAO::getProductByIdAndCat($producto_id,$categoria_id));
-
-                    if($pedido != null){
-                        $pedido_existe = false;
+                    foreach($_SESSION['selecciones'] as $pedido2){
+                        $pedido = unserialize($pedido2);
+                        if($pedido->getProducto()->getProducto_id() == $producto_id){
+                            $pedido->setCantidad($pedido->getCantidad() + 1);
+                            $pedido_existe = true;
+                            array_push($_SESSION['selecciones'],serialize($pedido));
+                            $find = array_search($producto_id,$_SESSION['selecciones'] );
+                            unset($_SESSION['selecciones'][$find]); //averiguar porque el "unset" solo funciona una vez.
+                            break;
+                        }
                     }
 
-                    $_SESSION['selecciones'] = array();
-                    array_push($_SESSION['selecciones'],  serialize($pedido));  
-            }
+                    if($pedido_existe == false){
+                    $pedido = new Pedido(ProductoDAO::getProductByIdAndCat($producto_id,$categoria_id));
+                    array_push($_SESSION['selecciones'],serialize($pedido));
+                    }
+
+                
                 header("Location:".url."?controller=producto&action=carta");
             }else{
                 header("Location:".url."?controller=producto&action=carta");

@@ -1,26 +1,29 @@
 <body>
 <div>
-        <table>
+    
+        <table class=" table table-striped-columns">
             <tr>
-                <th>id</th>
-                <th>nombre</th>
-                <th>desc</th>
+                <th>Producto</th>
+                <th></th>
+                <th>Cantidad</th>
                 <th>precio</th>
-                <th>categoria</th>
-                <th>imagen</th>
             </tr>
 
             <?php
             foreach($_SESSION['selecciones'] as $pedido1){
                 $pedido = unserialize($pedido1);
+                $categoriaid = $pedido->getProducto()->getCategoria_id();
+                $nomCategoria = productoDAO::getNomCatById($categoriaid);
                 ?>
             <tr>
-                <td><?=$pedido->getProducto()->getProducto_id()?></td>
-                <td><?=$pedido->getProducto()->getNombre_producto()?></td>
-                <td><?=$pedido->getProducto()->getDescripcion()?></td>
-                <td><?=$pedido->getProducto()->getPrecio()?></td>
-                <td><?=$pedido->getProducto()->getCategoria_id()?></td>
-                <td><?=$pedido->getProducto()->getImagen_producto()?></td>
+                <td><img class="img-table" src="assets/img_product/<?=$pedido->getProducto()->getImagen_producto()?>" alt="..."></td>
+                <td>
+                    <p class="texto-carrito-prod"><?=$pedido->getProducto()->getNombre_producto()?></p>
+                    <p class="texto-carrito-cat"><?=$nomCategoria?></p>
+                    <p class="texto-carrito-estandar">Suministrados y entregados por Drim</p>
+                </td>
+                <td><?=$pedido->getCantidad()?></td>
+                <td><?=$pedido->getProducto()->getPrecio()?> €</td>
                 <!-- Añadimos un boton por fila -->
                 <td>
                     <form action=<?=url.'?controller=producto&action=sel'?> method='post'>

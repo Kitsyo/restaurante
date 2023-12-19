@@ -22,7 +22,7 @@
               <p><img src="assets/icons/fav2.svg"></p>
               <p><a href="#" class="col card-link link-cat"><?=$nomEntrantes?></a></p>
               <p class="card-text precio-carta"><?=$prod->getPrecio()?> €</p>
-              <form action="<?=url."?controller=producto&action=prueba"?>" method='post'>
+              <form action="<?=url."?controller=producto&action=carritoDetalle"?>" method='post'>
                 <input type='hidden' name='categoria_id' value=" <?=$prod->getCategoria_id()?>">
                 <input type='hidden' name='producto_id' value=" <?=$prod->getProducto_id()?>">
                 <button class="container d-flex justify-content-center align-items-center boton-comp rounded boton-hover" type="submit">Comprar
@@ -40,7 +40,7 @@
               <p><img src="assets/icons/fav2.svg"></p>
               <p><a href="#" class="col card-link link-cat"><?=$postre->getDescripcion()?></a></p>
               <p class="card-text precio-carta"><?=$postre->getPrecio()?> €</p>
-              <form action="<?=url."?controller=producto&action=prueba"?>" method='post'>
+              <form action="<?=url."?controller=producto&action=carritoDetalle"?>" method='post'>
                 <input type='hidden' name='categoria_id' value=" <?=$postre->getCategoria_id()?>">
                 <input type='hidden' name='producto_id' value=" <?=$postre->getProducto_id()?>">
                 <button class="container d-flex justify-content-center align-items-center boton-comp rounded boton-hover" type="submit">Comprar
@@ -58,7 +58,7 @@
               <p><img src="assets/icons/fav2.svg"></p>
               <p><a href="#" class="col card-link link-cat"><?=$hamburguesa->getDescripcion()?></a></p>
               <p class="card-text precio-carta"><?=$hamburguesa->getPrecio()?> €</p>
-              <form action="<?=url."?controller=producto&action=prueba"?>" method='post'>
+              <form action="<?=url."?controller=producto&action=carritoDetalle"?>" method='post'>
                 <input type='hidden' name='categoria_id' value=" <?=$hamburguesa->getCategoria_id()?>">
                 <input type='hidden' name='producto_id' value=" <?=$hamburguesa->getProducto_id()?>">
                 <button class="container d-flex justify-content-center align-items-center boton-comp rounded boton-hover" type="submit">Comprar
@@ -76,9 +76,9 @@
               <p><img src="assets/icons/fav2.svg"></p>
               <p><a href="#" class="col card-link link-cat"><?=$vegana->getDescripcion()?></a></p>
               <p class="card-text precio-carta"><?=$vegana->getPrecio()?> €</p>
-              <form action="<?=url."?controller=producto&action=prueba"?>" method='post'>
-                <input type='hidden' name='categoria_id' value=" <?=$prod->getCategoria_id()?>">
-                <input type='hidden' name='producto_id' value=" <?=$prod->getProducto_id()?>">
+              <form action="<?=url."?controller=producto&action=carritoDetalle"?>" method='post'>
+                <input type='hidden' name='categoria_id' value=" <?=$vegana->getCategoria_id()?>">
+                <input type='hidden' name='producto_id' value=" <?=$vegana->getProducto_id()?>">
                 <button class="container d-flex justify-content-center align-items-center boton-comp rounded boton-hover" type="submit">Comprar
               </form>
             </div>
@@ -94,9 +94,9 @@
               <p><img src="assets/icons/fav2.svg"></p>
               <p><a href="#" class="col card-link link-cat"><?=$sinGlu->getDescripcion()?></a></p>
               <p class="card-text precio-carta"><?=$sinGlu->getPrecio()?> €</p>
-              <form action="<?=url."?controller=producto&action=prueba"?>" method='post'>
-                <input type='hidden' name='categoria_id' value=" <?=$prod->getCategoria_id()?>">
-                <input type='hidden' name='producto_id' value=" <?=$prod->getProducto_id()?>">
+              <form action="<?=url."?controller=producto&action=carritoDetalle"?>" method='post'>
+                <input type='hidden' name='categoria_id' value=" <?=$sinGlu->getCategoria_id()?>">
+                <input type='hidden' name='producto_id' value=" <?=$sinGlu->getProducto_id()?>">
                 <button class="container d-flex justify-content-center align-items-center boton-comp rounded boton-hover" type="submit">Comprar
               </form>
             </div>
@@ -112,9 +112,9 @@
               <p><img src="assets/icons/fav2.svg"></p>
               <p><a href="#" class="col card-link link-cat"><?=$desayuno->getDescripcion()?></a></p>
               <p class="card-text precio-carta"><?=$desayuno->getPrecio()?> €</p>
-              <form action="<?=url."?controller=producto&action=prueba"?>" method='post'>
-                <input type='hidden' name='categoria_id' value=" <?=$prod->getCategoria_id()?>">
-                <input type='hidden' name='producto_id' value=" <?=$prod->getProducto_id()?>">
+              <form action="<?=url."?controller=producto&action=carritoDetalle"?>" method='post'>
+                <input type='hidden' name='categoria_id' value=" <?=$desayuno->getCategoria_id()?>">
+                <input type='hidden' name='producto_id' value=" <?=$desayuno->getProducto_id()?>">
                 <button class="container d-flex justify-content-center align-items-center boton-comp rounded boton-hover" type="submit">Comprar
               </form>
             </div>
