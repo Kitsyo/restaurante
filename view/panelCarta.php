@@ -34,7 +34,7 @@
         <?php foreach($postres as $postre){?>
         <div class="col-md-6 col-xl-3 mb-4 d-flex justify-content-center">
           <div class="card border-sty" style="width: 18rem;">
-            <img src="assets/images/macarrones.jpg" class="card-img-top" alt="...">
+            <img src="assets/img_product/<?=$postre->getImagen_producto();?>" class="card-img-top" alt="...">
             <div class="card-body">
               <p class="card-text"><?=$postre->getNombre_producto()?></p>
               <p><img src="assets/icons/fav2.svg"></p>
@@ -52,7 +52,7 @@
         <?php foreach($hamburguesas as $hamburguesa){?>
         <div class="col-md-6 col-xl-3 mb-4 d-flex justify-content-center">
           <div class="card border-sty" style="width: 18rem;">
-            <img src="assets/images/macarrones.jpg" class="card-img-top" alt="...">
+            <img src="assets/img_product/<?=$hamburguesa->getImagen_producto();?>" class="card-img-top" alt="...">
             <div class="card-body">
               <p class="card-text"><?=$hamburguesa->getNombre_producto()?></p>
               <p><img src="assets/icons/fav2.svg"></p>
@@ -70,7 +70,7 @@
         <?php foreach($veganas as $vegana){?>
         <div class="col-md-6 col-xl-3 mb-4 d-flex justify-content-center">
           <div class="card border-sty" style="width: 18rem;">
-            <img src="assets/images/macarrones.jpg" class="card-img-top" alt="...">
+            <img src="assets/img_product/<?=$vegana->getImagen_producto();?>" class="card-img-top" alt="...">
             <div class="card-body">
               <p class="card-text"><?=$vegana->getNombre_producto()?></p>
               <p><img src="assets/icons/fav2.svg"></p>
@@ -88,7 +88,7 @@
         <?php foreach($sinGluten as $sinGlu){?>
         <div class="col-md-6 col-xl-3 mb-4 d-flex justify-content-center">
           <div class="card border-sty" style="width: 18rem;">
-            <img src="assets/images/macarrones.jpg" class="card-img-top" alt="...">
+            <img src="assets/img_product/<?=$sinGlu->getImagen_producto();?>" class="card-img-top" alt="...">
             <div class="card-body">
               <p class="card-text"><?=$sinGlu->getNombre_producto()?></p>
               <p><img src="assets/icons/fav2.svg"></p>
@@ -106,7 +106,7 @@
         <?php foreach($desayunos as $desayuno){?>
         <div class="col-md-6 col-xl-3 mb-4 d-flex justify-content-center">
           <div class="card border-sty" style="width: 18rem;">
-            <img src="assets/images/macarrones.jpg" class="card-img-top" alt="...">
+            <img src="assets/img_product/<?=$desayuno->getImagen_producto();?>" class="card-img-top" alt="...">
             <div class="card-body">
               <p class="card-text"><?=$desayuno->getNombre_producto()?></p>
               <p><img src="assets/icons/fav2.svg"></p>

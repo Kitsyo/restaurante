@@ -91,6 +91,8 @@ class productoController{
         include_once "model/Producto.php";
         include_once "model/Pedido.php";
         include_once "model/PedidoDetalle.php";
+        include_once "utils/CalculadoraPrecio.php";
+        
         session_start();
         if (!isset($_SESSION['selecciones'])){
             $_SESSION['selecciones'] = array();
@@ -100,17 +102,17 @@ class productoController{
                 $producto_id = $_POST['producto_id'];
                 $categoria_id = $_POST['categoria_id'];
                 $pedido_existe = false;
-
+                $i = 0;
                     foreach($_SESSION['selecciones'] as $pedido2){
                         $pedido = unserialize($pedido2);
                         if($pedido->getProducto()->getProducto_id() == $producto_id){
                             $pedido->setCantidad($pedido->getCantidad() + 1);
                             $pedido_existe = true;
-                            array_push($_SESSION['selecciones'],serialize($pedido));
-                            $find = array_search($producto_id,$_SESSION['selecciones'] );
-                            unset($_SESSION['selecciones'][$find]); //averiguar porque el "unset" solo funciona una vez.
+                            //possible unset del array "selecciones" unset($_SESSION['selecciones'][$i])
+                            $_SESSION['selecciones'][$i] = serialize($pedido);
                             break;
                         }
+                        $i++;
                     }
 
                     if($pedido_existe == false){
@@ -125,6 +127,19 @@ class productoController{
              } 
         }
         
+    }
+    public function registro(){
+        if (!isset($_SESSION['selecciones'])){
+            $_SESSION['selecciones'] = array();
+        }
+        include_once "view/cabecera.php";
+
+        
+        //Panel registro
+        include_once "view/panelRegistro.php";
+        
+        //footer
+        include_once "view/footer.php";
     }
 
     public function confirmar(){

@@ -50,4 +50,19 @@ class Pedido{
 
         return $this;
     }
+    public function devuelvePrecio(){
+        return $this->producto->getPrecio()*$this->cantidad;
+        
+    }
+    public function devuelvePrecioTotal(){
+        return $this->producto->getPrecio()*$this->cantidad;
+
+    }
+    public static function calculadoraPrecioPedido($pedido){
+        $precioTotal = 0;
+        foreach($pedido as $pedidos){
+            $precioTotal += $precioTotal;
+        }
+        return $precioTotal;
+    }
 }

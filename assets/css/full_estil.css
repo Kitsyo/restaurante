@@ -27,6 +27,18 @@
 }
 
 /* hovers */
+.text-foot:hover{
+    transition: 0.5s;
+    color:#FF9500;
+}
+.no-acc:hover{
+    transition: 0.2s;
+    color:#7da3c3;
+}
+.for-pass:hover{
+    transition: 0.2s;
+    color:#7da3c3;
+}
 .boton-hover:hover{
     background-color: #FF9500;
 }
@@ -72,8 +84,109 @@ main{
     width: 1175px;
     margin-top: 30px;
 }
-/* body */
 /* Carro */
+.foto-prueb{
+    width: 120px;
+    height: 120px;
+}
+
+.btn-eliminar-prod{
+    border:none;
+    background-color: transparent;
+}
+.inp-cart{
+    width: 30px;
+    height: 30px;
+    border:none;
+    border-color: #adb5bd;
+}
+.add-cart{
+    width: 25px;
+    height: 30px;
+    border: none;
+    border-color: #adb5bd;
+    background-color: transparent;
+
+}
+.del-cart{
+    width: 25px;
+    height: 30px;
+    border: none;
+    background-color: transparent;
+
+}
+.div-pro-tit{
+    height: 50px;
+}
+.border-table-prod{
+    border-bottom:solid 1px;
+    border-color: #adb5bd;
+}
+div.foto-cart{
+    width: 130px;
+}
+div.text-cart{ 
+    width: 220px;
+}
+div.cant-cart{
+    width: 140px;
+    height: 32px;
+    border:solid 1px;
+    border-color: #adb5bd;
+    margin-right: 20px;
+}div.price-cart{
+    width: 95px;
+}div.del-cart{
+    width: 30px;
+}
+.table-cart{
+    border-bottom:solid 1px;
+    border-color: #f1f3f9;;
+    
+}
+th.product{
+    width: 387px;
+    height: 50px;
+    font-size: 12px;
+    font-family: "roboto";
+}
+th.product-quant{
+    width: 130px;
+    height: 50px;
+    font-size: 12px;
+    font-family: "roboto";
+}
+th.product-price{
+    width: 180px;
+    height: 50px;
+    font-size: 12px;
+    font-family: "roboto";
+}
+.cell-text-cod{
+    border: solid 1px;
+}
+.mas-prod{
+    color: #004797;
+    text-decoration: none;
+    font-size: 12px;
+    font-family: "roboto";
+}
+.num-text-cart{
+    font-family: "roboto";
+    color:#004797;
+    font-weight: bold;
+    font-size: 18px;
+}
+.total-text-cart{
+    font-family: "roboto";
+    color:#323232;
+    font-weight: bold;
+    font-size: 18px;
+}
+.div-carrt{
+    border-bottom: solid 1px;
+    border-top: solid 1px;
+}
 .img-table{
     width: 150px;
     height: 150px;
@@ -94,10 +207,82 @@ main{
     color:#999999;
     font-size: 10.2px;
 }
+/* resgistro */
+.reg-st{
+    font-size: 16px;
+    font-family: "roboto";
+    color:#000000;
+}
+.reg-principal{
+    width: 700px;
+    height: 300px;
+    background-color: #e0eaec;
+}
+.long-inp{
+    width: 266px;
+    height: 40px;
+    border:solid;
+    border-width: 0.125rem;
+    border-radius: 0.25rem;
+    border-color: #e3e4e6;
+}
+.for-pass{
+    color: #004797;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: "roboto";
+}
+.no-acc{
+    color: #004797;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: "roboto";
+}
+.cod-acc{
+    color: #004797;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: "roboto-b";
+}
 /* botones */
+.btn-comp{
+    width: 254px;
+    height: 56px;
+    background-color: #004797;
+    border:none;
+    color: #ffffff;
+    font-family: "roboto";
+    font-size: 13px;
+    font-weight: bold;
+}
+.btn-codigo{
+    width: 50px;
+    height: 40px;
+    background-color: #004797;
+    border:none;
+    color: #ffffff;
+    font-family: "roboto";
+    font-size: 12px;
+}
 .boton-hv{
     transform: scale(1.0);
     transition: 0.5s;
+}
+.boton-reg{
+    width: 266px;
+    height: 32px;
+    background-color: #004797;
+    border:none;
+    color: #ffffff;
+    font-family: "roboto";
+}
+.boton-reg2{
+    width: 74.22px;
+    height: 32px;
+    background-color: #004797;
+    border:none;
+    color: #ffffff;
+    font-family: "roboto";
 }
 .boton1{
     width: 173.68px;
@@ -216,13 +401,29 @@ h3{
     font-family: "cocogose2";
 }
 /* footer */
+.text-prin{
+    font-size: 13px;
+    color:#ffffff;
+    font-family: "roboto-b";
+}
+.text-foot{
+    color:#ffffff;
+    font-size: 13px;
+    font-family: "roboto";
+    text-decoration: none;
+}
 .copirigth{
     color:#ffffff;
+    font-family: "roboto";
+    font-size: 12px;
 }
 .footer_bg{
     background-color:#004797;
 }
-
+.logo-tienda{
+    width: 160px;
+    height: 60px;
+}
 /*Media query*/
 @media only screen and (max-width: 600px) {
     /* body {
