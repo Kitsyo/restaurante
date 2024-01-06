@@ -16,6 +16,7 @@
           </div>
           <!--ini-->
           <?php
+          $pos =0;
             foreach($_SESSION['selecciones'] as $pedido1){
                 $pedido = unserialize($pedido1);
                 $categoriaid = $pedido->getProducto()->getCategoria_id();
@@ -32,9 +33,11 @@
                     <p class="texto-carrito-estandar">Suministrados y entregados por Drim</p>
               </div>
               <div class="col-2 d-flex justify-content-center rounded cant-cart">
-                  <button class="add-cart me-3">+</button>
+                <form action="<?=url."?controller=producto&action=añadirCant"?>" method='post'>
+                  <button type="submit" name='Add' value="<?=$pos?>" class="add-cart me-3">+</button>
                   <input class="inp-cart" value="<?=$pedido->getCantidad()?>">
-                  <button class="del-cart">-</button>
+                  <button type="submit" name='Del' value="<?=$pos?>" class="del-cart">-</button>
+                </form>
               </div>
               <div class="col-2 price-cart"><?=$pedido->devuelvePrecio()?> €</div>
               <div class="col-2 del-cart">

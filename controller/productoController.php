@@ -4,7 +4,7 @@ include_once "model/productoDAO.php";
 class productoController{
     public function index(){
         session_start();
-
+        // $_SESSION['selecciones'] = array();
         //cabecera
         
 
@@ -54,25 +54,6 @@ class productoController{
     public function carrito(){
         session_start();
 
-        // if (!isset($_SESSION['selecciones'])){
-        //     $_SESSION['selecciones'] = array();
-        // }
-
-        // if(isset($_POST['Add'])){
-        //     //añadimos dia
-        //     $pedido = $_SESSION['selecciones'][$_POST['Add']];
-        //     $pedido->setCantidad($pedido->getCantidad()+1);
-        // }else if(isset($_POST['Del'])){
-        //     $pedido = $_SESSION['selecciones'][$_POST['Del']];
-        //     if ($pedido->getCantidad()==1){
-        //         unset($_SESSION['selecciones'][$_POST['Del']]);
-        //         //Tenemos que re-indexar el array
-        //         $_SESSION['selecciones'] = array_values($_SESSION['selecciones']);
-        //     }else{
-        //         $pedido->setCantidad($pedido->getCantidad()-1);
-        //     }
-        // }
-
         //cabezera
         include_once "view/cabecera_carrito.php";
         include_once "model/Producto.php";
@@ -88,12 +69,10 @@ class productoController{
         
     }
     public function carritoDetalle(){
+        session_start();
         include_once "model/Producto.php";
         include_once "model/Pedido.php";
         include_once "model/PedidoDetalle.php";
-        include_once "utils/CalculadoraPrecio.php";
-        
-        session_start();
         if (!isset($_SESSION['selecciones'])){
             $_SESSION['selecciones'] = array();
         }else{
@@ -132,22 +111,101 @@ class productoController{
         if (!isset($_SESSION['selecciones'])){
             $_SESSION['selecciones'] = array();
         }
+        include_once "view/cabecera.php";        
+        //Panel registro
+        include_once "view/panelRegistro.php";
+        //footer
+        include_once "view/footer.php";
+    }
+    public function inicioUser(){
+        session_start();
+        if (!isset($_SESSION['selecciones'])){
+            $_SESSION['selecciones'] = array();
+        }
         include_once "view/cabecera.php";
 
+        //Panel
+        include_once "view/panelInicioSesion.php";
+        //footer
+        include_once "view/footer.php";
+    }
+    public function registroUser(){
+        session_start();
+        if (!isset($_SESSION['selecciones'])){
+            $_SESSION['selecciones'] = array();
+        }
+        include_once "view/cabecera.php";
         
-        //Panel registro
+        //Panel
         include_once "view/panelRegistro.php";
         
         //footer
         include_once "view/footer.php";
     }
+    public function añadirCant(){
+        session_start();
+        include_once "model/Producto.php";
+        include_once "model/Pedido.php";
+        include_once "model/PedidoDetalle.php";
+        if (!isset($_SESSION['selecciones'])){
+            $_SESSION['selecciones'] = array();
+        }else{
+            if (isset($_POST['Add'])){
+            // $_SESSION['selecciones'] = array();
+                $pedido_existe = false;
+                $i = 0;
+                    foreach($_SESSION['selecciones'] as $pedido2){
+                        $pedido = unserialize($pedido2);
+                        $pedido->setCantidad($pedido->getCantidad() + 1);
+                        $pedido_existe = true;
+                        $_SESSION['selecciones'][$i] = serialize($pedido);
+                        break;
+                        }
+                        $i++;
 
+                header("Location:".url."?controller=producto&action=carrito");
+            
+            }elseif(isset($_POST['Del'])){
+                $pedido_existe = false;
+                $i = 0;
+                    foreach($_SESSION['selecciones'] as $pedido2){
+                        $pedido = unserialize($pedido2);
+                        if ($pedido->getCantidad()==1){
+                            unset($_SESSION['selecciones'][$_POST['Del']]);
+                            //Tenemos que re-indexar el array
+                            $_SESSION['selecciones'] = array_values($_SESSION['selecciones']);
+                        }else{
+                            $pedido->setCantidad($pedido->getCantidad()-1);
+                        }
+                        $pedido_existe = true;
+                        $_SESSION['selecciones'][$i] = serialize($pedido);
+                        break;
+                        }
+                        $i++;
+                
+                header("Location:".url."?controller=producto&action=carrito");
+            }else{
+                header("Location:".url."?controller=producto&action=carrito");
+            }
+
+        }
+    }
+    
     public function confirmar(){
         //almacena el pedido en la base de datos (Pedido DAO que guarde el pedido en la bbdd)
 
         //Guardo la cookie
         setcookie('UltimoPedido',$_POST['cantidadFinal'],3600);
-
     }
 }
 ?>
+<!-- else if(isset($_POST['Del'])){
+                    $pedido = $_SESSION['selecciones'][$_POST['Del']];
+                    if ($pedido->getCantidad()==1){
+                        unset($_SESSION['selecciones'][$_POST['Del']]);
+                        //Tenemos que re-indexar el array
+                        $_SESSION['selecciones'] = array_values($_SESSION['selecciones']);
+                    }else{
+                        $pedido->setCantidad($pedido->getCantidad()-1);
+                    }
+                } -->

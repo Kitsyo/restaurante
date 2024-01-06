@@ -38,7 +38,7 @@
               <a class="nav-link" href="<?=url."?controller=producto&action=carrito"?>"><?=count($_SESSION['selecciones'])?><img src="assets/icons/icon-minicart.svg"></a>
             </div>
             <div class="col-12 col-md-6">
-              <a class="nav-link" href="<?=url."?controller=producto&action=registro"?>"><img src="assets/icons/icon-myacount.svg"></a>
+              <a class="nav-link" href="<?=url."?controller=producto&action=inicioUser"?>"><img src="assets/icons/icon-myacount.svg"></a>
             </div>
           </div>
         </div>
