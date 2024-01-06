@@ -107,20 +107,20 @@ class productoController{
         }
         
     }
-    public function registro(){
-        if (!isset($_SESSION['selecciones'])){
-            $_SESSION['selecciones'] = array();
-        }
-        include_once "view/cabecera.php";        
-        //Panel registro
-        include_once "view/panelRegistro.php";
-        //footer
-        include_once "view/footer.php";
-    }
     public function inicioUser(){
         session_start();
         if (!isset($_SESSION['selecciones'])){
             $_SESSION['selecciones'] = array();
+        }
+        if(isset($_POST['ini_log'])){
+            $email = $_POST['verif_email'];
+            $prueba = productoDAO::logUser($email);
+            $email = $_POST['verif_email'];
+            if($email != productoDAO::logUser($email)){
+                echo"hola";
+            }else{
+                echo"no va";
+            }
         }
         include_once "view/cabecera.php";
 
@@ -134,6 +134,17 @@ class productoController{
         if (!isset($_SESSION['selecciones'])){
             $_SESSION['selecciones'] = array();
         }
+        if(isset($_POST['registro'])){
+            if(empty($_POST['correo']) or empty($_POST['contraseña'])){
+                echo "no va";
+            }else{
+                $email = $_POST['correo'];
+                $password = password_hash($_POST["contraseña"], PASSWORD_DEFAULT); // Hashear la contraseña antes de almacenarla en la base de datos
+                // Preparar la consulta SQL para insertar un nuevo usuario
+                productoDAO::addUser($email,$password);  
+            }
+        }
+
         include_once "view/cabecera.php";
         
         //Panel
@@ -198,14 +209,3 @@ class productoController{
         setcookie('UltimoPedido',$_POST['cantidadFinal'],3600);
     }
 }
-?>
-<!-- else if(isset($_POST['Del'])){
-                    $pedido = $_SESSION['selecciones'][$_POST['Del']];
-                    if ($pedido->getCantidad()==1){
-                        unset($_SESSION['selecciones'][$_POST['Del']]);
-                        //Tenemos que re-indexar el array
-                        $_SESSION['selecciones'] = array_values($_SESSION['selecciones']);
-                    }else{
-                        $pedido->setCantidad($pedido->getCantidad()-1);
-                    }
-                } -->

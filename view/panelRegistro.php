@@ -14,26 +14,27 @@
             </div>
             <div class="col">
                 <h3 class="reg-st d-flex justify-content-center mt-1">Registrate</h3>
-                        <form>
+                        <form method="post">
                             <div class="d-flex justify-content-center align-items-center ms-4 mt-4">
                                 <label for="exampleFormControlInput1" class="form-label" ></label>
-                                <input class="long-inp" type="email" class="form-control" id="exampleFormControlInput1" placeholder="  Ej.:ejemplo@gmail.com">
+                                <input class="long-inp" type="text" name="correo" class="form-control" id="exampleFormControlInput1" placeholder="  Ej.:ejemplo@gmail.com">
                             </div>
                             <div class="ms-4">
                                 <label for="inputPassword" class="col-sm-2 col-form-label"></label>
                                 <div class="col-sm-10">
-                                    <input class="long-inp" placeholder="  Contraseña" type="password" class="form-control" id="inputPassword">
+                                    <input class="long-inp" placeholder="Contraseña" name="contraseña" type="password" class="form-control" id="inputPassword">
                                 </div>
                             </div>
-                        </form>
+                        
                     <div class="container row d-flex justify-content-center align-items-center">
                         <div class="ms-3 mt-1 col d-flex justify-content-start">
                             <button class="container rounded" type="submit">Volver
                         </div>
                         <div class="ms-4 mt-1 col d-flex justify-content-end">
-                            <button class="container d-flex justify-content-center align-items-center boton-reg2 rounded boton-hover" type="submit">Enviar
+                            <button class="container d-flex justify-content-center align-items-center boton-reg2 rounded boton-hover" action="" name="registro" type="submit">Enviar
                         </div>
                     </div>
+                </form>
             </div>
         </div>
     </div>

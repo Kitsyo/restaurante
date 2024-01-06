@@ -11,26 +11,27 @@
             </div>
             <div class="col">
                 <h3 class="reg-st d-flex justify-content-center mt-4">Iniciar sesión</h3>
-                        <form>
+                        <form method="post">
                             <div class="d-flex justify-content-center align-items-center ms-4 mt-4">
                                 <label for="exampleFormControlInput1" class="form-label" ></label>
-                                <input class="long-inp" type="email" class="form-control" id="exampleFormControlInput1" placeholder="  Ej.:ejemplo@gmail.com">
+                                <input class="long-inp" name="verif_email" type="text" class="form-control" id="exampleFormControlInput1" placeholder="  Ej.:ejemplo@gmail.com">
                             </div>
                             <div class="ms-4">
                                 <label for="inputPassword" class="col-sm-2 col-form-label"></label>
                                 <div class="col-sm-10">
-                                    <input class="long-inp" placeholder="  Contraseña" type="password" class="form-control" id="inputPassword">
+                                    <input class="long-inp" name="verif_pass" placeholder="Contraseña" type="password" class="form-control" id="inputPassword">
                                 </div>
                                 <div class="mt-2 d-flex justify-content-end">
                                     <a href="#" class="for-pass">Olvide mi contraseña</a>
                                 </div>
                             </div>
+                        
+                            <div class="ms-4 mt-3">
+                                <button name="ini_log" type="submit" class="container d-flex justify-content-center align-items-center boton-reg rounded boton-hover" type="submit">Entrar
+                            </div>
                         </form>
-                  <div class="ms-4 mt-3">
-                    <button class="container d-flex justify-content-center align-items-center boton-reg rounded boton-hover" type="submit">Entrar
-                  </div>
                   <div class="mt-2">
-                    <a href="#" class="d-flex justify-content-center no-acc">¿No tiene una cuenta? Regístrese</a>
+                    <a href="<?=url."?controller=producto&action=registroUser"?>" class="d-flex justify-content-center no-acc">¿No tiene una cuenta? Regístrese</a>
                   </div>
             </div>
         </div>

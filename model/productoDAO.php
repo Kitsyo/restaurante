@@ -93,25 +93,40 @@ class productoDAO{
         $con->close();
         return $result;
     }
-    // public static function getProductByIdAndCat($producto_id){
-    //     //Preparamos la consulta para saber la categoria
-    //     $con = DataBase::connect(); 
+    public static function addUser($email,$password){
+        //Preparamos la consulta para saber la categoria
+        $con = DataBase::connect(); 
         
-    //     // var_dump($nomCat);
-    //     //consulta para el producto
-    //     $stmt = $con->prepare("SELECT * FROM producto WHERE producto_id = ?");
-    //     $stmt->bind_param("i",$producto_id);
+        //consulta para el producto
+        $stmt = $con->prepare("INSERT INTO clientes(cliente_id, email, contrasena, pedido_id) VALUES ('','$email','$password','')");
+        $stmt->execute();
+        $result=$stmt->get_result();
+        $con->close();
+        return $result;
+        
+    }
+    public static function logUser($email,$password){
+        $con = DataBase::connect();
+        $md5pass = md5($password);
 
-    //     //ejeccutamos consulta
+        $stmt = $con->prepare("SELECT * FROM clientes WHERE email = :user AND contrasena = :pass ");
+    
+        //ejecutamos la consulta
+        $result=$stmt->get_result();
+        $con->close();
+        return $result;
+    }
+    // public static function logUserPass($password){
+    //     $con = DataBase::connect(); 
+
+    //     $stmt = $con->prepare("SELECT * FROM cliente WHERE contrasena = ?");
+    //     $stmt->bind_param("s",$password);
+
+    //     //ejecutamos la consulta
     //     $stmt->execute();
     //     $result=$stmt->get_result();
-        
-    //     $result = $result->fetch_object();
-
     //     $con->close();
-
     //     return $result;
-
     // }
-    
+
 }

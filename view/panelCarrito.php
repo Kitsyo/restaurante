@@ -45,7 +45,9 @@
               </div>
             </div>
           </div>
-          <?php } ?>
+          <?php
+          $pos++;
+          } ?>
           <!--end-->
         </div>
       </div>
