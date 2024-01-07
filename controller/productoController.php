@@ -171,15 +171,45 @@ class productoController{
                         
 
                 header("Location:".url."?controller=producto&action=carrito");
-            }
+            }else if (isset($_POST['Del'])){
+                // $_SESSION['selecciones'] = array();
+                    $producto_id = $_POST['Del'];
+                    $pedido_existe = false;
+                    $i = 0;
+                        foreach($_SESSION['selecciones'] as $pedido2){
+                            $pedido = unserialize($pedido2);
+                            if($pedido->getProducto()->getProducto_id() == $producto_id){{
+                                if($pedido->getCantidad()==1){
+                                    unset($_SESSION['selecciones'][$_POST['Del']]);
+                                    //Reindexamos
+                                    $_SESSION['selecciones'] = array_values($_SESSION['selecciones']);
+                                }else{
+                                    $pedido->setCantidad($pedido->getCantidad() - 1);
+                                    $pedido_existe = true;
+                                    $_SESSION['selecciones'][$i] = serialize($pedido);
+                                    break;
+                                        }
+                                    }
+                                }
+                                $i++;
+                            }
+                            
+    
+                    header("Location:".url."?controller=producto&action=carrito");
+                }
 
         }
     }
     
     public function confirmar(){
         //almacena el pedido en la base de datos (Pedido DAO que guarde el pedido en la bbdd)
-
+        session_start();
+        if (!isset($_SESSION['selecciones'])){
+            $_SESSION['selecciones'] = array();
+        }
+        header("Location:".url."?controller=producto&action=carrito");
+        
         //Guardo la cookie
-        setcookie('UltimoPedido',$_POST['cantidadFinal'],3600);
+        // setcookie('UltimoPedido',$pedidoJson,3600);
     }
 }

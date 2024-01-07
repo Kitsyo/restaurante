@@ -90,9 +90,12 @@
         <div class="d-flex justify-content-center mt-4">
           <a href="#" class="mas-prod">Elegir más productos</a>
         </div>
+      <form method='post' action="<?=url."?controller=producto&action=confirmar"?>">
         <div class="d-flex justify-content-center">
-          <button class="btn-comp rounded-pill boton-hover mt-2">Finalizar compra</button>
+          <button class="btn-comp rounded-pill boton-hover mt-2" type="submit" name='confirmar' value="<?=$pedido->getProducto()->getProducto_id()?>">Finalizar compra</button>
+          <input class="inp-cart" type="hidden" name='producto_id' value="<?=$pedido->getProducto()->getProducto_id()?>">
         </div>
+      </form>
       </div>
     </div>
   </div>

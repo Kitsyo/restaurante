@@ -116,17 +116,18 @@ class productoDAO{
         $con->close();
         return $result;
     }
-    // public static function logUserPass($password){
-    //     $con = DataBase::connect(); 
-
-    //     $stmt = $con->prepare("SELECT * FROM cliente WHERE contrasena = ?");
-    //     $stmt->bind_param("s",$password);
-
-    //     //ejecutamos la consulta
-    //     $stmt->execute();
-    //     $result=$stmt->get_result();
-    //     $con->close();
-    //     return $result;
-    // }
+    public static function confirmarPedido($fecha,$cantidad,$precio){
+        //Preparamos la consulta para saber la categoria
+        $con = DataBase::connect(); 
+        
+        //consulta para el producto
+        
+        $stmt = $con->prepare("INSERT INTO pedido(pedido_id, cliente_id, fecha_pedido, cantidad, precio_total, producto_id) VALUES ('','','$fecha','$cantidad', '$precio','')");
+        $stmt->execute();
+        $result=$stmt->get_result();
+        $con->close();
+        return $result;
+        
+    }
 
 }
