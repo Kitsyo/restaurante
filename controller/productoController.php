@@ -4,13 +4,10 @@ include_once "model/productoDAO.php";
 class productoController{
     public function index(){
         session_start();
-        // $_SESSION['selecciones'] = array();
-        //cabecera
-        
-
         if (!isset($_SESSION['selecciones'])){
             $_SESSION['selecciones'] = array();
         }
+        
         include_once "view/cabecera.php";
 
         
@@ -30,7 +27,9 @@ class productoController{
     }
     public function carta(){
         session_start();
-
+        if (!isset($_SESSION['selecciones'])){
+            $_SESSION['selecciones'] = array();
+        }
         include_once "view/cabecera_carta.php";
         //panelCarta
 
@@ -53,7 +52,9 @@ class productoController{
     }
     public function carrito(){
         session_start();
-
+        if (!isset($_SESSION['selecciones'])){
+            $_SESSION['selecciones'] = array();
+        }
         //cabezera
         include_once "view/cabecera_carrito.php";
         include_once "model/Producto.php";
