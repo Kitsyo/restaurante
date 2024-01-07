@@ -112,16 +112,7 @@ class productoController{
         if (!isset($_SESSION['selecciones'])){
             $_SESSION['selecciones'] = array();
         }
-        if(isset($_POST['ini_log'])){
-            $email = $_POST['verif_email'];
-            $prueba = productoDAO::logUser($email);
-            $email = $_POST['verif_email'];
-            if($email != productoDAO::logUser($email)){
-                echo"hola";
-            }else{
-                echo"no va";
-            }
-        }
+        
         include_once "view/cabecera.php";
 
         //Panel
@@ -163,39 +154,22 @@ class productoController{
         }else{
             if (isset($_POST['Add'])){
             // $_SESSION['selecciones'] = array();
+                $producto_id = $_POST['Add'];
                 $pedido_existe = false;
                 $i = 0;
                     foreach($_SESSION['selecciones'] as $pedido2){
                         $pedido = unserialize($pedido2);
-                        $pedido->setCantidad($pedido->getCantidad() + 1);
-                        $pedido_existe = true;
-                        $_SESSION['selecciones'][$i] = serialize($pedido);
-                        break;
+                        if($pedido->getProducto()->getProducto_id() == $producto_id){{
+                            $pedido->setCantidad($pedido->getCantidad() + 1);
+                            $pedido_existe = true;
+                            $_SESSION['selecciones'][$i] = serialize($pedido);
+                            break;
+                                }
+                            }
+                            $i++;
                         }
-                        $i++;
+                        
 
-                header("Location:".url."?controller=producto&action=carrito");
-            
-            }elseif(isset($_POST['Del'])){
-                $pedido_existe = false;
-                $i = 0;
-                    foreach($_SESSION['selecciones'] as $pedido2){
-                        $pedido = unserialize($pedido2);
-                        if ($pedido->getCantidad()==1){
-                            unset($_SESSION['selecciones'][$_POST['Del']]);
-                            //Tenemos que re-indexar el array
-                            $_SESSION['selecciones'] = array_values($_SESSION['selecciones']);
-                        }else{
-                            $pedido->setCantidad($pedido->getCantidad()-1);
-                        }
-                        $pedido_existe = true;
-                        $_SESSION['selecciones'][$i] = serialize($pedido);
-                        break;
-                        }
-                        $i++;
-                
-                header("Location:".url."?controller=producto&action=carrito");
-            }else{
                 header("Location:".url."?controller=producto&action=carrito");
             }
 
