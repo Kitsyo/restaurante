@@ -112,13 +112,12 @@ class productoController{
         if (!isset($_SESSION['selecciones'])){
             $_SESSION['selecciones'] = array();
         }
-        
         include_once "view/cabecera.php";
-
         //Panel
         include_once "view/panelInicioSesion.php";
         //footer
         include_once "view/footer.php";
+
     }
     public function registroUser(){
         session_start();

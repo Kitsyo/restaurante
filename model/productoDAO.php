@@ -105,11 +105,10 @@ class productoDAO{
         return $result;
         
     }
-    public static function logUser($email,$password){
+    public static function logUser($email,$md5pass){
         $con = DataBase::connect();
-        $md5pass = md5($password);
 
-        $stmt = $con->prepare("SELECT * FROM clientes WHERE email = :user AND contrasena = :pass ");
+        $stmt = $con->prepare("SELECT * FROM clientes WHERE email = '$email' AND contrasena = '$md5pass' ");
     
         //ejecutamos la consulta
         $result=$stmt->get_result();
@@ -129,5 +128,4 @@ class productoDAO{
         return $result;
         
     }
-
 }

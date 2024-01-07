@@ -27,7 +27,7 @@
                             </div>
                         
                             <div class="ms-4 mt-3">
-                                <button name="ini_log" type="submit" class="container d-flex justify-content-center align-items-center boton-reg rounded boton-hover" type="submit">Entrar
+                                <button name="ini_log" action="<?=url."?controller=producto&action=inicioUser"?>" type="submit" class="container d-flex justify-content-center align-items-center boton-reg rounded boton-hover">Entrar
                             </div>
                         </form>
                   <div class="mt-2">
