@@ -93,35 +93,14 @@ class productoDAO{
         $con->close();
         return $result;
     }
-    public static function addUser($email,$password){
-        //Preparamos la consulta para saber la categoria
-        $con = DataBase::connect(); 
-        
-        //consulta para el producto
-        $stmt = $con->prepare("INSERT INTO clientes(cliente_id, email, contrasena, pedido_id) VALUES ('','$email','$password','')");
-        $stmt->execute();
-        $result=$stmt->get_result();
-        $con->close();
-        return $result;
-        
-    }
-    public static function logUser($email,$md5pass){
-        $con = DataBase::connect();
-
-        $stmt = $con->prepare("SELECT * FROM clientes WHERE email = '$email' AND contrasena = '$md5pass' ");
     
-        //ejecutamos la consulta
-        $result=$stmt->get_result();
-        $con->close();
-        return $result;
-    }
-    public static function confirmarPedido($fecha,$cantidad,$precio){
+    public static function confirmarPedido($fecha_pedido,$prod_id,$cant,$precio_total){
         //Preparamos la consulta para saber la categoria
         $con = DataBase::connect(); 
         
         //consulta para el producto
         
-        $stmt = $con->prepare("INSERT INTO pedido(pedido_id, cliente_id, fecha_pedido, cantidad, precio_total, producto_id) VALUES ('','','$fecha','$cantidad', '$precio','')");
+        $stmt = $con->prepare("INSERT INTO pedido(pedido_id, cliente_id, fecha_pedido, cantidad, precio_total, producto_id) VALUES ('','11','$fecha_pedido','$cant', '$precio_total','$prod_id')");
         $stmt->execute();
         $result=$stmt->get_result();
         $con->close();

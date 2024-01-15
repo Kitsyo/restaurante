@@ -33,13 +33,17 @@
             <input class="form-control me-2" type="search" placeholder="Search">
             <button class="btn btn-outline-success" type="submit">Search</button>
           </form>
-          <div class=" row m-2">
+          <div class="row m-2">
             <div class="col-12 col-md-6">
-            <a class="nav-link" href="<?=url."?controller=producto&action=carrito"?>"><?=count($_SESSION['selecciones'])?><img src="assets/icons/icon-minicart.svg"></a>
-          </div>
-            <div class="col-12 col-md-6">
-              <a class="nav-link" href="<?=url."?controller=producto&action=inicioUser"?>"><img src="assets/icons/icon-myacount.svg"></a>
-            </div>
+                <div class="ms-2 mt-1">
+                  <a class="nav-link" href="<?=url."?controller=producto&action=inicioUser"?>"><img src="assets/icons/icon-myacount.svg"></a>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+              <div class="ms-2 mt-1">
+                  <a class="nav-link" href="<?=url."?controller=producto&action=carrito"?>"><?php if(count($_SESSION['selecciones'])!=0){ ?> <span class="position-absolute top-55 start-90 translate-middle badge bg-danger"><?=count($_SESSION['selecciones'])?></span> <?php  } ?><img src="assets/icons/icon-minicart.svg"></a>
+                </div>
+              </div>
           </div>
         </div>
       </div>

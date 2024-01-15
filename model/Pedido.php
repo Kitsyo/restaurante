@@ -6,10 +6,12 @@ class Pedido{
 
     private $cantidad = 1;
 
+    private $fecha_pedido;
+    private $precio_total;
+
 
     public function __construct($producto){
         $this->producto=$producto;
-        // var_dump($producto);
     }
     /**
      * Get the value of producto
@@ -47,6 +49,44 @@ class Pedido{
     public function setCantidad($cantidad)
     {
         $this->cantidad = $cantidad;
+
+        return $this;
+    }
+    /**
+     * Get the value of fecha_pedido
+     */ 
+    public function getFechaPedido()
+    {
+        return $this->fecha_pedido;
+    }
+
+    /**
+     * Set the value of fecha_pedido
+     *
+     * @return  self
+     */ 
+    public function setFechaPedido($fecha_pedido)
+    {
+        $this->fecha_pedido = $fecha_pedido;
+
+        return $this;
+    }
+    /**
+     * Get the value of precio_total
+     */ 
+    public function getPrecioTotal()
+    {
+        return $this->precio_total;
+    }
+
+    /**
+     * Set the value of precio_total
+     *
+     * @return  self
+     */ 
+    public function setPrecioTotal($precio_total)
+    {
+        $this->precio_total = $precio_total;
 
         return $this;
     }

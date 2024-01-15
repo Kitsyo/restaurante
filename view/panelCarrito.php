@@ -1,8 +1,6 @@
 <body>
   <div class="container d-flex justify-content-center align-content-center">
     <div class="container d-flex">
-
-
       <div class="col-8 container">
         <div class="container row d-flex justify-content-center">
           <div class="col-12 d-flex justify-content-start align-content-center div-pro-tit">
@@ -21,7 +19,7 @@
                 $categoriaid = $pedido->getProducto()->getCategoria_id();
                 $nomCategoria = productoDAO::getNomCatById($categoriaid);
                 ?>
-          <div class="col-12 d-flex justify-content-start align-content-center mt-4 table-cart">
+          <div class="col-md-12 d-flex justify-content-start align-content-center mt-4 table-cart">
             <div class="row d-flex align-content-center align-items-center mt-1 mb-1">
               <div class="col-2 foto-cart ">
                 <img class="foto-prueb" src="assets/img_product/<?=$pedido->getProducto()->getImagen_producto()?>">
@@ -78,7 +76,7 @@
                 <p class="total-text-cart">Total:</p>
               </div>
               <div class="col-6 d-flex justify-content-end">
-                <p class="num-text-cart"><?=$precioTotal?> €</p>
+                  <p class="num-text-cart"><?=$precioTotal?> €</p>
               </div>
             </div>
           </div>
@@ -88,12 +86,13 @@
           <span>Compra igual o superior a 60€, envío GRATIS<span>
         </div>
         <div class="d-flex justify-content-center mt-4">
-          <a href="#" class="mas-prod">Elegir más productos</a>
+          <a href="<?=url."?controller=producto&action=carta"?>" class="mas-prod">Elegir más productos</a>
         </div>
       <form method='post' action="<?=url."?controller=producto&action=confirmar"?>">
         <div class="d-flex justify-content-center">
           <button class="btn-comp rounded-pill boton-hover mt-2" type="submit" name='confirmar' value="<?=$pedido->getProducto()->getProducto_id()?>">Finalizar compra</button>
           <input class="inp-cart" type="hidden" name='producto_id' value="<?=$pedido->getProducto()->getProducto_id()?>">
+          <input class="inp-cart" type="hidden" name='precio_total' value="<?=$pedido->getProducto()->getPrecioTotal()?>">
         </div>
       </form>
       </div>

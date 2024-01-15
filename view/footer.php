@@ -20,7 +20,7 @@
 </div>
     <div class="container-fluid mt-3" style="background-color:#004797;">
         <div class="container-fluid row d-flex justify-content-around">
-            <div class="col-2 mt-5 d-flex align-content-center justify-content-start">
+            <div class="col-2 mt-5 d-none d-md-block d-flex align-content-center justify-content-start">
                 <div>
                     <a class="logo-tienda" href="#"><img src="assets/images/logo.svg" alt="Encuentra tu tienda"></a>
                 </div>
@@ -64,17 +64,17 @@
                     </div>
                 </div>
             </div>
-            <div class="col-3 mb-3 mt-3 d-flex justify-content-center align-items-center">
+            <div class="col-3 mb-3 mt-3  d-flex justify-content-center align-items-center">
                 <div class="d-flex align-content-center">
                     <a class="logo-tienda" href="#"><img class="img-escale" src="assets/icons/footer-tiendas.svg" alt="Encuentra tu tienda"></a>
                 </div>
             </div>
-            <div class="col-3 mb-3 mt-3 d-flex justify-content-center align-items-center">
+            <div class="col-3 mb-3 mt-3 d-flex d-none d-md-block justify-content-center align-items-center">
                 <div class="d-flex align-content-center">
                     <a class="logo-tienda" href="#"><img class="img-escale" src="assets/icons/footer-premios.svg" alt="Nuestros premios"></a>
                 </div>
             </div>
-            <div class="col-3 d-flex justify-content-end align-items-center mb-3 mt-3">
+            <div class="col-3 d-none d-xl-block d-flex justify-content-end align-items-center mb-3 mt-3">
                 <div>
                     <a class="logo-tienda" href="#"><img class="img-escale" src="assets/icons/logo-ecloud.svg" alt="logo e-cloud"></a>
                     <a class="logo-tienda" href="#"><img class="img-escale" src="assets/icons/logo-vtex.svg" alt="logo vtex"></a>
