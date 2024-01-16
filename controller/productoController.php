@@ -5,6 +5,8 @@ include_once "model/clienteDAO.php";
 class productoController{
     public function index(){
         session_start();
+        $_SESSION['selecciones'] = array();
+
         if (!isset($_SESSION['selecciones'])){
             $_SESSION['selecciones'] = array();
         }
@@ -91,18 +93,17 @@ class productoController{
                         if($pedido->getProducto()->getProducto_id() == $producto_id){
                             $pedido->setCantidad($pedido->getCantidad() + 1);
                             $pedido_existe = true;
-                            //possible unset del array "selecciones" unset($_SESSION['selecciones'][$i])
+                            
                             $_SESSION['selecciones'][$i] = serialize($pedido);
                             break;
                         }
                         $i++;
                     }
-
                     if($pedido_existe == false){
                     $pedido = new Pedido(ProductoDAO::getProductByIdAndCat($producto_id,$categoria_id));
                     array_push($_SESSION['selecciones'],serialize($pedido));
+                    
                     }
-
                 
                 header("Location:".url."?controller=producto&action=carta");
             }else{
@@ -199,11 +200,13 @@ class productoController{
                     $i = 0;
                         foreach($_SESSION['selecciones'] as $pedido2){
                             $pedido = unserialize($pedido2);
+                            
                             if($pedido->getProducto()->getProducto_id() == $producto_id){{
                                 if($pedido->getCantidad()==1){
                                     unset($_SESSION['selecciones'][$_POST['Del']]);
+                                    // array_splice($_SESSION['selecciones'],$_POST['Del'],1);
                                     //Reindexamos
-                                    $_SESSION['selecciones'] = array_values($_SESSION['selecciones']);
+                                    // array_values($_SESSION['selecciones']);
                                 }else{
                                     $pedido->setCantidad($pedido->getCantidad() - 1);
                                     $pedido_existe = true;
@@ -214,6 +217,8 @@ class productoController{
                                 }
                                 $i++;
                             }
+                            
+                            
                     header("Location:".url."?controller=producto&action=carrito");
                 }
         }
@@ -234,6 +239,11 @@ class productoController{
             $_SESSION['usuario'] = array();
         }
         if(isset($_POST['confirmar'])){
+            foreach($_SESSION['selecciones'] as $prueba){
+                // $prueba = unserialize($prueba2);
+                
+                setcookie('selecciones',$prueba, time() + 3600, "/");
+            }
             foreach($_SESSION['selecciones'] as $pedido2){
                 $pedido = unserialize($pedido2);
                 $prod_id =  $pedido->getProducto()->getProducto_id();
@@ -243,14 +253,16 @@ class productoController{
                 productoDAO::confirmarPedido($fecha_pedido,$prod_id,$cant,$precio_total);
                 
             }
-            setcookie('selecciones',3600);
+            //serializo el pedido
+            $_SESSION['selecciones'] = serialize($pedido);
+            //Guardo la cookie
             $_SESSION['selecciones'] = array();
             header("Location:".url."?controller=producto&action=carrito");
 
         }
         
         //Guardo la cookie
-        setcookie('UltimoPedido',3600);
+        // setcookie('selecciones',$_SESSION['selecciones'] ,3600);
     }
     
 }

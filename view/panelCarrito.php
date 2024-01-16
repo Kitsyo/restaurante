@@ -14,6 +14,7 @@
           </div>
           <!--ini-->
           <?php
+            // var_dump($_COOKIE['UltimoPedido']);
             foreach($_SESSION['selecciones'] as $pedido1){
                 $pedido = unserialize($pedido1);
                 $categoriaid = $pedido->getProducto()->getCategoria_id();
