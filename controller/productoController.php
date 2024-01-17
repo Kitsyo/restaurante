@@ -10,8 +10,29 @@ class productoController{
         if (!isset($_SESSION['selecciones'])){
             $_SESSION['selecciones'] = array();
         }
+        if (!isset($_SESSION['usuario'])){
+            $_SESSION['usuario'] = array();
+            include_once "view/cabecera/cabecera.php";
+
         
-        include_once "view/cabecera/cabecera.php";
+        //Panel Pedido
+            $nomEntrantes = productoDAO::getNomCatById(1);
+            $nomPostres = productoDAO::getNomCatById(2);
+            $nomHamburg = productoDAO::getNomCatById(3);
+            $nomVeganas = productoDAO::getNomCatById(4);
+            $nomSinGlu = productoDAO::getNomCatById(5);
+            $nomDesayu = productoDAO::getNomCatById(6);
+            
+        include_once "view/panelPedido.php";
+        
+        //footer
+        include_once "view/footer.php";
+        }else{
+
+        }
+        //si el usuario a iniciado session, añade la cebecera del login con su nombre 
+        //y el panel con el enlaze al panel de info usuario.
+        include_once "view/cabecera/cabecera_login.php";
 
         
         //Panel Pedido
@@ -57,6 +78,9 @@ class productoController{
         session_start();
         if (!isset($_SESSION['selecciones'])){
             $_SESSION['selecciones'] = array();
+        }
+        if (!isset($_SESSION['usuario'])) {
+            header('location: login.php');
         }
             
         //cabezera
@@ -113,6 +137,7 @@ class productoController{
         header("Location:".url."?controller=producto&action=carta");
     }
     public function inicioUser(){
+        session_start();
         include_once "model/clientes.php";
         if (!isset($_SESSION['selecciones'])){
             $_SESSION['selecciones'] = array();
@@ -124,14 +149,16 @@ class productoController{
             $password = password_verify($_POST['verif_pass'], $md5pass);
             $result = clienteDAO::logUser($email,$md5pass);
 
-            if ($result->num_rows == 1){              
-                $clienteID = clienteDAO::getCliente($email,$md5pass);
-                // var_dump($clienteID);
+            if ($result->num_rows == 1){
+                
+                $_SESSION['usuario'] = clienteDAO::getCliente($email,$md5pass);
+                
                 
                 header("Location:".url."?controller=producto&action=carrito");
             }else{
                 header("Location:".url."?controller=producto&action=inicioUser");
             }
+            
         }
         
         include_once "view/cabecera/cabecera.php";

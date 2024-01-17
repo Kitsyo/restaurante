@@ -35,7 +35,7 @@
                 <div class="col-12 col-md-6">
                     <div class="ms-2 mt-1">
                         <a class="nav-link" href="<?=url."?controller=producto&action=inicioUser"?>"><img src="assets/icons/icon-myacount.svg"></a>
-                        <span class="nom-icon">Inicia Sesión</span>
+                        <span class="nom-icon"><?=$_SESSION['usuario']->getEmail()?></span>
                     </div>
                 </div>
                 <div class="col-12 col-md-6">

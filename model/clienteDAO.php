@@ -58,7 +58,7 @@ class clienteDAO{
 
         //ejecutamos la consulta
         $stmt->execute();
-        $result=$stmt->get_result()->fetch_object();
+        $result=$stmt->get_result()->fetch_object('clientes');
         // var_dump($result);
         $con->close();
         //Alamcenamos el resultado en una lista

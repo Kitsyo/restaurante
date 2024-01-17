@@ -60,6 +60,10 @@ main{
     margin-left: 50px;
     margin-right: 50px;
 }
+.nom-icon{
+    font-size: 11px;
+    font-family: "roboto";
+}
 .img-escale{
     transform: scale(1.0);
     transition: 0.5s;
@@ -67,6 +71,7 @@ main{
 .header_nav{
     background-color: #004797;
     color:#FFFFFF;
+    height: 120.88px;
 }
 .bot_header{
     background-color: #FDE300;
