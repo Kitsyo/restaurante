@@ -324,6 +324,7 @@ class productoController{
         if (!isset($_SESSION['usuario'])){
             $_SESSION['usuario'] = array();
         }
+
         $cliente_id = $_SESSION['usuario']->getCliente_id();
         $pruebas = pedidoDAO::getPedidoById($cliente_id);
         // $clienteid=$pruebas['cliente_id'];
@@ -334,6 +335,26 @@ class productoController{
         
         //footer
         include_once "view/footer.php";
+    }
+    public function detallesResena(){
+        session_start();
+        include_once "model/Producto.php";
+        include_once "model/Pedido.php";
+        include_once "model/PedidoDetalle.php";
+        include_once "model/clientes.php";
+        include_once "model/Resenas.php";
+        if (!isset($_SESSION['selecciones'])){
+            $_SESSION['selecciones'] = array();
+        }
+        if (!isset($_SESSION['usuario'])){
+            $_SESSION['usuario'] = array();
+        }
+        if(isset($_POST['pedido_id'])){
+            $pedido_id = $_POST['pedido_id'];
+            header("Location:".url."?controller=producto&action=panelResena");
+        }
+        header("Location:".url."?controller=producto&action=panelResena");
+        
     }
     
 }

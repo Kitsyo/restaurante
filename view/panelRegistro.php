@@ -9,7 +9,7 @@
                     <a href="#" class="cod-acc">Recibir código de acceso por e-mail</a>
                 </div>
                 <div class="d-flex justify-content-center align-content-center mt-4">
-                    <a href="#" class="cod-acc">Entrar con e-mail y contraseña</a>
+                    <a href="<?=url."?controller=producto&action=inicioUser"?>" class="cod-acc">Entrar con e-mail y contraseña</a>
                 </div>
             </div>
             <div class="col">
