@@ -3,6 +3,7 @@
 <head>
     <title>Restaurante Drim</title>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
+    
     <meta charset="UTF-8">
     <meta name="description" content="Descripció web">
     <meta name="keywords" content="Paraules clau">
@@ -32,16 +33,17 @@
             <button class="btn btn-outline-success" type="submit">Search</button>
           </form>
             <div class="row m-2 d-flex justify-content-center align-items-center">
-                <div class="col-12 col-md-6">
-                    <div class="ms-2 mt-1">
-                        <a class="nav-link" href="<?=url."?controller=producto&action=inicioUser"?>"><img src="assets/icons/icon-myacount.svg"></a>
-                        <span class="nom-icon"><?=$_SESSION['usuario']->getEmail()?></span>
+                <div class="col-12 col-md-6 d-flex justify-content-center ">
+                    <div class="ms-2 mt-1 user-div">
+                        <a class="nav-link" href="<?=url."?controller=producto&action=panelUsuario"?>"><img src="assets/icons/icon-myacount.svg"></a>
+                        <div class="nom-icon">Mi cuenta</div>
                     </div>
+                    
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="ms-2 mt-1">
                         <a class="nav-link" href="<?=url."?controller=producto&action=carrito"?>"><?php if(count($_SESSION['selecciones'])!=0){ ?> <span class="position-absolute top-55 start-90 translate-middle badge bg-danger"><?=count($_SESSION['selecciones'])?></span> <?php  } ?><img src="assets/icons/icon-minicart.svg"></a>
-                        <span class="nom-icon">Comprar</span>
+                        <div class="nom-icon">Comprar</div>
                     </div>
               </div>
           </div>

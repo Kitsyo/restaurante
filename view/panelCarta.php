@@ -1,12 +1,6 @@
 <!DOCTYPE html>
-<body>
-  <section>
-  <section>
-
-        
+<body>      
   <section>  
-
-        
     <div class="container d-flex justify-content-xl-start mt-4 mb-4 justify-content-md-center justify-content-sm-center ">
       <h2><a href="#"><img class="me-4" src="assets/icons/icono-menu.png" alt="..."></a>Nuestros productos</h2>
     </div>

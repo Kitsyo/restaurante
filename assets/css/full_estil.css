@@ -60,9 +60,12 @@ main{
     margin-left: 50px;
     margin-right: 50px;
 }
+
 .nom-icon{
-    font-size: 11px;
+    font-size: 12px;
     font-family: "roboto";
+    letter-spacing: -.64px;
+    width: 50px;
 }
 .img-escale{
     transform: scale(1.0);
@@ -384,6 +387,10 @@ h3{
     color:#FFFFFF;
     font-family: "cocogose";
     font-size: 14px;
+}
+/* detalles-pedido */
+.detalles-ped{
+    width: 150px;
 }
 /* carta */
 .link-cat{

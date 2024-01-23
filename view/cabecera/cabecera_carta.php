@@ -26,7 +26,7 @@
               <a class="nav-link enlaces" style="color: white;" href="<?=url."?controller=producto&action=producto"?>">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link enlaces" style="color: white;" href="#">Destacados</a>
+              <a class="nav-link enlaces" style="color: white;" href="<?=url."?controller=producto&action=panelResena"?>">Reseñas</a>
             </li>
           </ul>
           <form class="d-flex justify-content-end order-first align-items-center" role="search">

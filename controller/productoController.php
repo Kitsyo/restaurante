@@ -1,6 +1,7 @@
 <?php
 include_once "model/productoDAO.php";
 include_once "model/clienteDAO.php";
+include_once "model/pedidoDAO.php";
 //esto es una clase php
 class productoController{
     public function index(){
@@ -165,9 +166,7 @@ class productoController{
         //Panel
         include_once "view/panelInicioSesion.php";
         //footer
-        include_once "view/footer.php";
-        
-        
+        include_once "view/footer.php"; 
     }
     public function registroUser(){
         session_start();
@@ -244,13 +243,10 @@ class productoController{
                                 }
                                 $i++;
                             }
-                            
-                            
-                    header("Location:".url."?controller=producto&action=carrito");
+                        header("Location:".url."?controller=producto&action=carrito");
                 }
         }
     }
-    
     public function confirmar(){
         //almacena el pedido en la base de datos (Pedido DAO que guarde el pedido en la bbdd)
         session_start();
@@ -267,17 +263,20 @@ class productoController{
         }
         if(isset($_POST['confirmar'])){
             foreach($_SESSION['selecciones'] as $prueba){
-                // $prueba = unserialize($prueba2);
-                
+
                 setcookie('selecciones',$prueba, time() + 3600, "/");
             }
             foreach($_SESSION['selecciones'] as $pedido2){
                 $pedido = unserialize($pedido2);
+                if($pedido->getProducto()->getProducto_id() == $producto_id){
+                    $pedido->setCantidad($pedido->getCantidad() + 1);
+                }
+                $cliente_id = $_SESSION['usuario']->getCliente_id();
                 $prod_id =  $pedido->getProducto()->getProducto_id();
                 $cant = $pedido->getCantidad();
                 $precio_total = $pedido->devuelvePrecio();
                 $fecha_pedido=date("Y-m-d H:i:s");
-                productoDAO::confirmarPedido($fecha_pedido,$prod_id,$cant,$precio_total);
+                productoDAO::confirmarPedido($cliente_id,$fecha_pedido,$prod_id,$cant,$precio_total);
                 
             }
             //serializo el pedido
@@ -288,8 +287,53 @@ class productoController{
 
         }
         
-        //Guardo la cookie
-        // setcookie('selecciones',$_SESSION['selecciones'] ,3600);
+    }
+    public function panelUsuario(){
+        session_start();
+        include_once "model/Producto.php";
+        include_once "model/Pedido.php";
+        include_once "model/PedidoDetalle.php";
+        include_once "model/clientes.php";
+        if (!isset($_SESSION['selecciones'])){
+            $_SESSION['selecciones'] = array();
+        }
+        if (!isset($_SESSION['usuario'])){
+            $_SESSION['usuario'] = array();
+        }
+        
+
+        include_once "view/cabecera/cabecera_login.php";
+        
+        //Panel
+        include_once "view/panelUsuario.php";
+        
+        //footer
+        include_once "view/footer.php";
+    }
+
+    public function panelResena(){
+        session_start();
+        include_once "model/Producto.php";
+        include_once "model/Pedido.php";
+        include_once "model/PedidoDetalle.php";
+        include_once "model/clientes.php";
+        include_once "model/Resenas.php";
+        if (!isset($_SESSION['selecciones'])){
+            $_SESSION['selecciones'] = array();
+        }
+        if (!isset($_SESSION['usuario'])){
+            $_SESSION['usuario'] = array();
+        }
+        $cliente_id = $_SESSION['usuario']->getCliente_id();
+        $pruebas = pedidoDAO::getPedidoById($cliente_id);
+        // $clienteid=$pruebas['cliente_id'];
+        include_once "view/cabecera/cabecera_carta.php";
+        
+        //Panel
+        include_once "view/panelResena.php";
+        
+        //footer
+        include_once "view/footer.php";
     }
     
 }

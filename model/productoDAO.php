@@ -94,13 +94,13 @@ class productoDAO{
         return $result;
     }
     
-    public static function confirmarPedido($fecha_pedido,$prod_id,$cant,$precio_total){
+    public static function confirmarPedido($cliente_id,$fecha_pedido,$prod_id,$cant,$precio_total){
         //Preparamos la consulta para saber la categoria
         $con = DataBase::connect(); 
         
         //consulta para el producto
         
-        $stmt = $con->prepare("INSERT INTO pedido(pedido_id, cliente_id, fecha_pedido, cantidad, precio_total, producto_id) VALUES ('','11','$fecha_pedido','$cant', '$precio_total','$prod_id')");
+        $stmt = $con->prepare("INSERT INTO pedido(pedido_id, cliente_id, fecha_pedido, cantidad, precio_total, producto_id) VALUES ('','$cliente_id','$fecha_pedido','$cant', '$precio_total','$prod_id')");
         $stmt->execute();
         $result=$stmt->get_result();
         $con->close();
