@@ -91,7 +91,7 @@ class Pedido{
         return $this;
     }
     public function devuelvePrecio(){
-        return $this->producto->getPrecio()*$this->cantidad;
+        return $this->producto->getPrecioTotal()*$this->cantidad;
         
     }
     public function devuelvePrecioTotal(){

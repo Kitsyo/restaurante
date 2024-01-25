@@ -7,6 +7,7 @@ include_once "hamburguesas.php";
 include_once "sinGluten.php";
 include_once "veganas.php";
 include_once "desayunos.php";
+include_once "Pedido.php";
 
 
 class productoDAO{
@@ -32,6 +33,24 @@ class productoDAO{
         }
         return $res;
 
+    }
+    public static function getProductById($producto_id){
+        //Preparamos la consulta para saber la categoria
+        $con = DataBase::connect(); 
+        
+        //consulta para el producto
+        $stmt = $con->prepare("SELECT * FROM producto WHERE producto_id = ?");
+        $stmt->bind_param("i",$producto_id);
+        
+        //ejeccutamos consulta
+        //ejecutamos la consulta
+        $stmt->execute();
+        $result=$stmt->get_result()->fetch_object();
+        // var_dump($result);
+        $con->close();
+        //Alamcenamos el resultado en una lista
+
+        return $result;
     }
     public static function getNomCatById($nomId){
         //preparamos la consulta

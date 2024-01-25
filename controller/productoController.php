@@ -310,8 +310,7 @@ class productoController{
         //footer
         include_once "view/footer.php";
     }
-
-    public function panelResena(){
+    public function detallesPedidosUser(){
         session_start();
         include_once "model/Producto.php";
         include_once "model/Pedido.php";
@@ -328,6 +327,36 @@ class productoController{
         $cliente_id = $_SESSION['usuario']->getCliente_id();
         $pruebas = pedidoDAO::getPedidoById($cliente_id);
         // $clienteid=$pruebas['cliente_id'];
+        include_once "view/cabecera/cabecera_carta.php";
+        
+        //Panel
+        include_once "view/panelDetallePedido.php";
+        
+        //footer
+        include_once "view/footer.php";
+    }
+    public function panelResena(){
+        session_start();
+        include_once "model/Producto.php";
+        include_once "model/Pedido.php";
+        include_once "model/PedidoDetalle.php";
+        include_once "model/clientes.php";
+        include_once "model/Resenas.php";
+        if (!isset($_SESSION['selecciones'])){
+            $_SESSION['selecciones'] = array();
+        }
+        if (!isset($_SESSION['usuario'])){
+            $_SESSION['usuario'] = array();
+        }
+        if(isset($_SESSION['pedidoRes'])){
+            $cliente_id = $_SESSION['usuario']->getCliente_id();
+            $email_user = $_SESSION['usuario']->getEmail();
+            $numPed = $_SESSION['pedidoRes'];
+            $detallesPed = pedidoDAO::getPedidoId($numPed);
+            $numProd = $detallesPed->getProductoId();
+            $productoPedido = productoDAO::getProductById($numProd); 
+
+        }
         include_once "view/cabecera/cabecera_carta.php";
         
         //Panel
@@ -350,7 +379,7 @@ class productoController{
             $_SESSION['usuario'] = array();
         }
         if(isset($_POST['pedido_id'])){
-            $pedido_id = $_POST['pedido_id'];
+            $_SESSION['pedidoRes'] = $_POST['pedido_id'];            
             header("Location:".url."?controller=producto&action=panelResena");
         }
         header("Location:".url."?controller=producto&action=panelResena");
