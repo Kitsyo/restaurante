@@ -1,4 +1,6 @@
 <?php
+include_once 'Pedido.php';
+include_once 'Producto.php';
 
 class PedidoDetalle extends Pedido{
     

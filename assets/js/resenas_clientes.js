@@ -3,7 +3,7 @@
 // .then( resultado => console.log(resultado) );
 
 document.addEventListener('DOMContentLoaded', function(){
-    fetch("http://localhost/drim/restaurante/",{
+    fetch("http://localhost/proyectoLasala.com/drim/restaurante/",{
         method: "POST",
         headers: {
             'Content-Type':'application/x-www-form-urlencoded',

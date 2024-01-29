@@ -34,6 +34,26 @@ class productoDAO{
         return $res;
 
     }
+    public static function getCategoriIdByProdId($producto_id){
+        //Preparamos la consulta para saber la categoria
+        $con = DataBase::connect(); 
+        
+        //consulta para el producto
+        $stmt = $con->prepare("SELECT * FROM producto WHERE producto_id = ?");
+        $stmt->bind_param("i",$producto_id);
+        // $nomCat = productoDAO::getNomCatById($id);
+        // var_dump($stmt);
+        //ejeccutamos consulta
+        //ejecutamos la consulta
+
+        $stmt->execute();
+        $result=$stmt->get_result()->fetch_object();
+        // var_dump($result);
+        $con->close();
+        //Alamcenamos el resultado en una lista
+
+        return $result;
+    }
     public static function getProductById($producto_id){
         //Preparamos la consulta para saber la categoria
         $con = DataBase::connect(); 
@@ -62,7 +82,6 @@ class productoDAO{
         //ejecutamos la consulta
         $stmt->execute();
         $result=$stmt->get_result()->fetch_object()->nombre_categoria;
-        // var_dump($result);
         $con->close();
         //Alamcenamos el resultado en una lista
 

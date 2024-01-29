@@ -37,7 +37,7 @@
                   <button type="submit" name='Del' value="<?=$pedido->getProducto()->getProducto_id()?>" class="del-cart">-</button>
                 </form>
               </div>
-              <div class="col-2 price-cart"><?=$pedido->devuelvePrecio()?> €</div>
+              <div class="col-2 price-cart"><?=$pedido->getProducto()->getPrecio()?> €</div>
               <div class="col-2 del-cart">
                 <button class="btn-eliminar-prod">X</button>
               </div>
@@ -52,7 +52,7 @@
             $precioTotal = 0;
             foreach($_SESSION['selecciones'] as $pedido1){
             $pedido = unserialize($pedido1);
-            $precioTotal += $pedido->devuelvePrecio();                
+            $precioTotal += ($pedido->getProducto()->getPrecio()*$pedido->getCantidad());
             }
             ?>
       <div class="container col-4 ms-4">

@@ -24,10 +24,9 @@
         <textarea class="form-control" aria-label="With textarea"></textarea>
           <button type="submit" class="ms-4 boton-sub rounded boton-hover">Enviar</button>
         </div>
-        <div class="mb-3 ms-3">
+        <div class="mb-3 ms-3 d-flex justify-content-between">
           <label class="newsletter-text form-label">Número de pedido: <?=$detallesPed->getPedido_id()?></label>
-          <label class="newsletter-text form-label">Nombre del Producto: <?=$productoPedido->getNombre_producto()?></label>
-          <label class="newsletter-text form-label">Número de pedido: <?=$detallesPed->getPedido_id()?></label>          
+          <label class="newsletter-text form-label">Fecha de compra: <?=$detallesPed->getFecha_pedido()?></label>          
         </div>
       </form>
     </div> 

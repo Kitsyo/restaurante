@@ -263,18 +263,19 @@ class productoController{
         }
         if(isset($_POST['confirmar'])){
             foreach($_SESSION['selecciones'] as $prueba){
-
                 setcookie('selecciones',$prueba, time() + 3600, "/");
             }
             foreach($_SESSION['selecciones'] as $pedido2){
                 $pedido = unserialize($pedido2);
+                $producto_id = $_POST['producto_id'];        
                 if($pedido->getProducto()->getProducto_id() == $producto_id){
                     $pedido->setCantidad($pedido->getCantidad() + 1);
                 }
                 $cliente_id = $_SESSION['usuario']->getCliente_id();
                 $prod_id =  $pedido->getProducto()->getProducto_id();
+                $precio = $pedido->getProducto()->getPrecio();
                 $cant = $pedido->getCantidad();
-                $precio_total = $pedido->devuelvePrecio();
+                $precio_total = $precio*$cant;
                 $fecha_pedido=date("Y-m-d H:i:s");
                 productoDAO::confirmarPedido($cliente_id,$fecha_pedido,$prod_id,$cant,$precio_total);
                 
@@ -326,6 +327,7 @@ class productoController{
 
         $cliente_id = $_SESSION['usuario']->getCliente_id();
         $pruebas = pedidoDAO::getPedidoById($cliente_id);
+        // var_dump($pruebas);
         // $clienteid=$pruebas['cliente_id'];
         include_once "view/cabecera/cabecera_carta.php";
         
@@ -349,12 +351,16 @@ class productoController{
             $_SESSION['usuario'] = array();
         }
         if(isset($_SESSION['pedidoRes'])){
+            
             $cliente_id = $_SESSION['usuario']->getCliente_id();
             $email_user = $_SESSION['usuario']->getEmail();
+            // var_dump($_SESSION['usuario']);
             $numPed = $_SESSION['pedidoRes'];
             $detallesPed = pedidoDAO::getPedidoId($numPed);
             $numProd = $detallesPed->getProductoId();
-            $productoPedido = productoDAO::getProductById($numProd); 
+            $numCat = productoDAO::getProductById($numProd);
+
+
 
         }
         include_once "view/cabecera/cabecera_carta.php";
