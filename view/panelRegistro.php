@@ -28,7 +28,7 @@
                         
                     <div class="container row d-flex justify-content-center align-items-center">
                         <div class="ms-3 mt-1 col d-flex justify-content-start">
-                            <button class="container rounded" type="submit">Volver
+                            <a class="container rounded" href="<?=url."?controller=producto&action=inicioUser"?>" type="submit">Volver</a>
                         </div>
                         <div class="ms-4 mt-1 col d-flex justify-content-end">
                             <button class="container d-flex justify-content-center align-items-center boton-reg2 rounded boton-hover" action="" name="registro" type="submit">Enviar

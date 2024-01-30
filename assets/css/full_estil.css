@@ -389,6 +389,11 @@ h3{
     font-size: 14px;
 }
 /* detalles-pedido */
+.det-ped-text {
+    color:#004797;
+    font-family: "roboto-b";
+    font-size: 14px;
+}
 .detalles-ped{
     width: 150px;
 }

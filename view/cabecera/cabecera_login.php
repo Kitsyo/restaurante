@@ -35,7 +35,7 @@
             <div class="row m-2 d-flex justify-content-center align-items-center">
                 <div class="col-12 col-md-6 d-flex justify-content-center ">
                     <div class="ms-2 mt-1 user-div">
-                        <a class="nav-link" href="<?=url."?controller=producto&action=panelUsuario"?>"><img src="assets/icons/icon-myacount.svg"></a>
+                        <a class="nav-link" href="<?=url."?controller=producto&action=inicioUser"?>"><img src="assets/icons/icon-myacount.svg"></a>
                         <div class="nom-icon">Mi cuenta</div>
                     </div>
                     

@@ -289,28 +289,6 @@ class productoController{
         }
         
     }
-    public function panelUsuario(){
-        session_start();
-        include_once "model/Producto.php";
-        include_once "model/Pedido.php";
-        include_once "model/PedidoDetalle.php";
-        include_once "model/clientes.php";
-        if (!isset($_SESSION['selecciones'])){
-            $_SESSION['selecciones'] = array();
-        }
-        if (!isset($_SESSION['usuario'])){
-            $_SESSION['usuario'] = array();
-        }
-        
-
-        include_once "view/cabecera/cabecera_login.php";
-        
-        //Panel
-        include_once "view/panelUsuario.php";
-        
-        //footer
-        include_once "view/footer.php";
-    }
     public function detallesPedidosUser(){
         session_start();
         include_once "model/Producto.php";

@@ -9,31 +9,31 @@
         <a href="#"><img src="assets/images/resenas.png" alt="..."></a>
     </div>
     <div class="container text-center d-flex justify-content-center ">
-      
-<!-- ini form -->
-      <section class="col">
-    <div class="border container d-flx align-items-center mt-5 d-none d-md-block" style="width: 672px; height: auto; box-shadow: 5%;">
-      <diV class="container text-center mt-3">
-        <h3>Deja tu comentario !</h3>
-      </diV>
-      <form action="<?=url."?controller=producto&action=carritoDetalle"?>" method='post'>
-        <div class="ms-3">
-          <label class="newsletter-text form-label">Usuario: <?=$email_user?></label>
-        </div>
-        <div class="d-flex ms-3 mb-3">
-        <textarea class="form-control" aria-label="With textarea"></textarea>
-          <button type="submit" class="ms-4 boton-sub rounded boton-hover">Enviar</button>
-        </div>
-        <div class="mb-3 ms-3 d-flex justify-content-between">
-          <label class="newsletter-text form-label">Número de pedido: <?=$detallesPed->getPedido_id()?></label>
-          <label class="newsletter-text form-label">Fecha de compra: <?=$detallesPed->getFecha_pedido()?></label>          
-        </div>
-      </form>
-    </div> 
-    </section>
-        <!-- Fin Form -->
-    </div>
   </section>
+<!-- ini form -->
+    <section class="col">
+      <div class="border container d-flx align-items-center mt-5 d-none d-md-block" style="width: 672px; height: auto; box-shadow: 5%;">
+        <diV class="container text-center mt-3">
+          <h3>Deja tu comentario !</h3>
+        </diV>
+        <form action="<?=url."?controller=producto&action=carritoDetalle"?>" method='post'>
+          <div class="ms-3">
+            <label class="newsletter-text form-label">Usuario: <?=$email_user?></label>
+          </div>
+          <div class="d-flex ms-3 mb-3">
+          <textarea class="form-control" aria-label="With textarea"></textarea>
+            <button type="submit" class="ms-4 boton-sub rounded boton-hover">Enviar</button>
+          </div>
+          <div class="mb-3 ms-3 d-flex justify-content-between">
+            <label class="newsletter-text form-label">Número de pedido: <?=$detallesPed->getPedido_id()?></label>
+            <label class="newsletter-text form-label">Fecha de compra: <?=$detallesPed->getFecha_pedido()?></label>          
+          </div>
+        </form>
+      </div> 
+    </section>
+<!-- Fin Form -->    
+    </div>
+  
   <section>
     <div class="container mt-5 mb-5">
       <div class="row">

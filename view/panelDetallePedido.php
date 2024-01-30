@@ -16,10 +16,10 @@
             foreach($pruebas as $prueba){?>
             <div class="mt-4 container row">
               <div class="d-flex justify-content-center align-items-center col">
-                <div class="pt-3 detalles-ped d-flex justify-content-center align-items-center"><p class="md-3">Pedido nº: <?=$prueba->getPedido_id()?></p></div>
-                <div class="pt-3 detalles-ped d-flex justify-content-center align-items-center"><p class="md-3">Fecha: <?=$prueba->getFecha_pedido()?></p></div>
-                <div class="pt-3 detalles-ped d-flex justify-content-center align-items-center"><p class="md-3">Cantidad: <?=$prueba->getCantidad()?></p></div>
-                <div class="pt-3 detalles-ped d-flex justify-content-center align-items-center"><p class="md-3">Precio total: <?=$prueba->getPrecio_Total()?></p></div>
+                <div class="det-ped-text pt-3 detalles-ped d-flex justify-content-center align-items-center"><p class="md-3">Pedido nº: <?=$prueba->getPedido_id()?></p></div>
+                <div class="det-ped-text pt-3 detalles-ped d-flex justify-content-center align-items-center"><p class="md-3">Fecha: <?=$prueba->getFecha_pedido()?></p></div>
+                <div class="det-ped-text pt-3 detalles-ped d-flex justify-content-center align-items-center"><p class="md-3">Cantidad: <?=$prueba->getCantidad()?></p></div>
+                <div class="det-ped-text pt-3 me-5 detalles-ped d-flex justify-content-center align-items-center"><p class="md-3">Precio total: <?=$prueba->getPrecio_Total()?> €</p></div>
                 <form action="<?=url."?controller=producto&action=detallesResena"?>" method='post'>
                   <input type='hidden' name='pedido_id' value="<?=$prueba->getPedido_id()?>">
                 <button class="container d-flex justify-content-center align-items-center boton-comp rounded boton-hover" type="submit">dejar reseña
