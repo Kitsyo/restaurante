@@ -21,6 +21,21 @@ class resenasDAO{
 
         return $result;
     }
+    public static function getResenasByValoracion($valoracion){
+        //preparamos la consulta
+        $con = DataBase::connect(); 
+
+        $stmt = $con->prepare("SELECT * FROM resenas WHERE valoracion = ?;");
+        $stmt->bind_param("i",$valoracion);
+
+        //ejecutamos la consulta
+        $stmt->execute();
+        $result=$stmt->get_result()->fetch_object('Resenas');
+        $con->close();
+        //Alamcenamos el resultado en una lista
+
+        return $result;
+    }
     public static function setResena($cliente_id, $pedido_id, $valoracion, $fecha_resena, $comentario_resena){
         $con = DataBase::connect(); 
     

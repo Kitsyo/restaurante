@@ -32,7 +32,6 @@ class APIController{
                 ];
             }
 
-            //$id_usuario = json_decode($_POST["id_usuario"]); se decodifican los datos JSON que se reciben desde JS
             
             // Si quieres devolverle información al JS, codificas en json un array con la información
             // y se los devuelves al JS
@@ -44,7 +43,13 @@ class APIController{
 
             $id_pedido = json_decode($_POST["pedido"]); //se decodifican los datos JSON que se reciben desde JS
             $id_usuario = json_decode($_POST["id_usuario"]); //se decodifican los datos JSON que se reciben desde JS
-            
+            $cliente_id = $_SESSION['usuario']->getCliente_id();
+            $email_user = $_SESSION['usuario']->getEmail();
+            // var_dump($_SESSION['usuario']);
+            $numPed = $_SESSION['pedidoRes'];
+            $detallesPed = pedidoDAO::getPedidoId($numPed);
+            $numProd = $detallesPed->getProductoId();
+            $numCat = productoDAO::getProductById($numProd);
             /*
 
                 Otras operaciones

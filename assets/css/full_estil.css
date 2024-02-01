@@ -389,6 +389,10 @@ h3{
     font-size: 14px;
 }
 /* detalles-pedido */
+.nom-res-detall{
+    font-family: "roboto-b";
+    font-size: 24px;
+}
 .det-ped-text {
     color:#004797;
     font-family: "roboto-b";
@@ -421,6 +425,32 @@ h3{
     font-family: "cocogose2";
 }
 /* reseñas */
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+}
+.rating input {
+    display: none;
+}
+
+.rating label {
+    cursor: pointer;
+    font-size: 30px;
+    color: #ccc;
+}
+
+.rating label:before {
+    content: '\2605'; /* Estrella vacía */
+}
+
+.rating input:checked ~ label {
+    color: #ffcc00;
+}
+
+.rating input:checked ~ label:before {
+    content: '\2605'; /* Estrella rellena */
+}
+/*  */
 #comment-container {
     width: 50%;
     margin: 0 auto;

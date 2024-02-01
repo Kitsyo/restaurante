@@ -305,6 +305,7 @@ class productoController{
 
         $cliente_id = $_SESSION['usuario']->getCliente_id();
         $pruebas = pedidoDAO::getPedidoById($cliente_id);
+        $email_user = $_SESSION['usuario']->getEmail();
         // var_dump($pruebas);
         // $clienteid=$pruebas['cliente_id'];
         include_once "view/cabecera/cabecera_carta.php";

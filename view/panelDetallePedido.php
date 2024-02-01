@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <body>
-    
+
   <section>  
-    <div class="container d-flex justify-content-xl-start mt-4 mb-4 justify-content-md-center justify-content-sm-center ">
-      <h2>Opiniones reales de usuarios</h2>
+    <div class="container d-flex justify-content-xl-center mt-4 mb-4 justify-content-md-center justify-content-sm-center ">
+      <h2 class="nom-res-detall">Detalles de los pedidos de <?=$email_user?></h2>
     </div>
     <div class="col-12 d-none d-md-block container rounded d-flex justify-content-center align-items-center" id="prueba">
         <a href="#"><img src="assets/images/resenas.png" alt="..."></a>
@@ -11,9 +11,9 @@
     <div class="container text-center d-flex justify-content-center ">
       <div class="row">
         <div class="col-12 mt-5">
-            <div>*Aqui van las reseñas*</div>
-            <?php
-            foreach($pruebas as $prueba){?>
+            
+        <?php
+          foreach($pruebas as $prueba){?>
             <div class="mt-4 container row">
               <div class="d-flex justify-content-center align-items-center col">
                 <div class="det-ped-text pt-3 detalles-ped d-flex justify-content-center align-items-center"><p class="md-3">Pedido nº: <?=$prueba->getPedido_id()?></p></div>

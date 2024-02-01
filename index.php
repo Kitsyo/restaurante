@@ -22,7 +22,9 @@
             }
 
             $controller->$action();
-            
+        
+
+        // }elseif ($_GET['controller'] == 'api'){
 
         }else{
             header("Location:".url."?controller=producto");

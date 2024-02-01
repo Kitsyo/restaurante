@@ -2,7 +2,7 @@
 <body>
     
   <section>  
-    <div class="container d-flex justify-content-xl-start mt-4 mb-4 justify-content-md-center justify-content-sm-center ">
+    <div class="container d-flex justify-content-xl-center mt-4 mb-4 justify-content-md-center justify-content-sm-center ">
       <h2>Opiniones reales de usuarios</h2>
     </div>
     <div class="col-12 d-none d-md-block container rounded d-flex justify-content-center align-items-center" id="prueba">
@@ -10,9 +10,10 @@
     </div>
     <div class="container text-center d-flex justify-content-center ">
   </section>
+
 <!-- ini form -->
     <section class="col">
-      <div class="border container d-flx align-items-center mt-5 d-none d-md-block" style="width: 672px; height: auto; box-shadow: 5%;">
+      <div class="border container d-flx align-items-center mt-5 " style="width: 672px; height: auto; box-shadow: 5%;">
         <diV class="container text-center mt-3">
           <h3>Deja tu comentario !</h3>
         </diV>
@@ -26,14 +27,30 @@
           </div>
           <div class="mb-3 ms-3 d-flex justify-content-between">
             <label class="newsletter-text form-label">Número de pedido: <?=$detallesPed->getPedido_id()?></label>
-            <label class="newsletter-text form-label">Fecha de compra: <?=$detallesPed->getFecha_pedido()?></label>          
+            <label class="newsletter-text form-label">Fecha de compra: <?=$detallesPed->getFecha_pedido()?></label>        
+            <label class="newsletter-text form-label" hidden><?=$detallesPed->getCliente_id()?></label>        
+          </div>
+          <div class="d-flex justify-content-center">
+            <label class="newsletter-text form-label">Valoracion: </label>          
+          </div>
+          <div class="d-flex justify-content-center mb-3">
+            <div class="rating">
+              <input type="radio" id="star1" name="rating" value="1">
+              <label for="star1"></label>
+              <input type="radio" id="star2" name="rating" value="2">
+              <label for="star2"></label>
+              <input type="radio" id="star3" name="rating" value="3">
+              <label for="star3"></label>
+              <input type="radio" id="star4" name="rating" value="4">
+              <label for="star4"></label>
+              <input type="radio" id="star5" name="rating" value="5">
+              <label for="star5"></label>
+            </div>
           </div>
         </form>
       </div> 
     </section>
-<!-- Fin Form -->    
-    </div>
-  
+<!-- Fin Form -->
   <section>
     <div class="container mt-5 mb-5">
       <div class="row">
