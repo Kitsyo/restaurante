@@ -17,7 +17,7 @@
         <diV class="container text-center mt-3">
           <h3>Deja tu comentario !</h3>
         </diV>
-        <form action="<?=url."?controller=producto&action=carritoDetalle"?>" method='post'>
+        <form name="resenas_form" method='post'>
           <div class="ms-3">
             <label class="newsletter-text form-label">Usuario: <?=$email_user?></label>
           </div>

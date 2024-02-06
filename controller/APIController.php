@@ -15,10 +15,10 @@ include_once "model/resenasDAO.php";
 
 
 class APIController{    
- 
-    public function api(){
+ //http://localhost/proyectoLasala.com/drim/restaurante/?controller=API&action=mostrarResenas
+    public function mostrarResenas(){
        
-        if($_POST["accion"] == 'consulta_resena'){
+        
             $allResenas = resenasDAO::getAllResenas(); //puedes hacer un select de pedidos aqui, o un insert o lo que quieras, utilizando el MODELO
             $arrayResenas = [];
 
@@ -30,35 +30,14 @@ class APIController{
                     "fecha_resena" => $resenas->getFecha_resena(),
                     "comentario_resena" => $resenas->getComentario_resena(),
                 ];
+                var_dump($arrayResenas);
             }
 
             
             // Si quieres devolverle información al JS, codificas en json un array con la información
             // y se los devuelves al JS
             echo json_encode($arrayResenas, JSON_UNESCAPED_UNICODE) ; 
-            return; //return para salir de la funcion
+            return $arrayResenas; //return para salir de la funcion
 
-        }
-        else if($_POST["accion"] == 'add_review'){
-
-            $id_pedido = json_decode($_POST["pedido"]); //se decodifican los datos JSON que se reciben desde JS
-            $id_usuario = json_decode($_POST["id_usuario"]); //se decodifican los datos JSON que se reciben desde JS
-            $cliente_id = $_SESSION['usuario']->getCliente_id();
-            $email_user = $_SESSION['usuario']->getEmail();
-            // var_dump($_SESSION['usuario']);
-            $numPed = $_SESSION['pedidoRes'];
-            $detallesPed = pedidoDAO::getPedidoId($numPed);
-            $numProd = $detallesPed->getProductoId();
-            $numCat = productoDAO::getProductById($numProd);
-            /*
-
-                Otras operaciones
-
-            */
-            
-            //si solo quieres devolver un pequeño mensaje, simplemente puedes hacer un echo de texto
-            echo "Bienvenido Pedrito";
-            return;
-        }
     }
 }

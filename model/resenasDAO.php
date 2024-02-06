@@ -10,16 +10,22 @@ class resenasDAO{
     public static function getAllResenas(){
         //preparamos la consulta
         $con = DataBase::connect(); 
-
+    
         $stmt = $con->prepare("SELECT * FROM resenas;");
-
+    
         //ejecutamos la consulta
         $stmt->execute();
-        $result=$stmt->get_result()->fetch_object('Resenas');
+        $result = $stmt->get_result();
+        $resenas = array();
+    
+        while ($row = $result->fetch_object('Resenas')) {
+            $resenas[] = $row;
+        }
+    
         $con->close();
+    
         //Alamcenamos el resultado en una lista
-
-        return $result;
+        return $resenas;
     }
     public static function getResenasByValoracion($valoracion){
         //preparamos la consulta

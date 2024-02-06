@@ -3,7 +3,7 @@
 // .then( resultado => console.log(resultado) );
 
 document.addEventListener('DOMContentLoaded', function(){
-    fetch("http://localhost/proyectoLasala.com/drim/restaurante/",{
+    fetch("http://localhost/proyectoLasala.com/drim/restaurante/?controller=API&action=mostrarResenas",{
         method: "POST",
         headers: {
             'Content-Type':'application/x-www-form-urlencoded',
@@ -13,10 +13,10 @@ document.addEventListener('DOMContentLoaded', function(){
         }),
     }) 
     .then(response => {
-        return response.jason();
+        return response.json();
     })
     .then(data => {
-        // mostrarResenas(data); "Aqui vas a llamar las funciones donde muestra tu HTML"
+        consele.log(data); //"Aqui vas a llamar las funciones donde muestra tu HTML"
     })
     .catch(error => {
         console.error(error);

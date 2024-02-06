@@ -3,7 +3,6 @@
 <head>
     <title>Restaurante Drim</title>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
-    
     <meta charset="UTF-8">
     <meta name="description" content="Descripció web">
     <meta name="keywords" content="Paraules clau">
