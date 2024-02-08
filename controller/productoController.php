@@ -339,24 +339,6 @@ class productoController{
             $numProd = $detallesPed->getProductoId();
             $numCat = productoDAO::getProductById($numProd);
 
-            $resenas = resenasDAO::getAllResenas();
-            $allResenas = resenasDAO::getAllResenas(); //puedes hacer un select de pedidos aqui, o un insert o lo que quieras, utilizando el MODELO
-            $arrayResenas = []; 
-            var_dump($allResenas);
-
-            foreach($allResenas as $resenas){
-                $arrayResenas[] =[
-                    "cliente_id" => $resenas->getCliente_id(),
-                    "pedido_id" => $resenas->getPedido_id(),
-                    "valoracion" => $resenas->getValoracion(),
-                    "fecha_resena" => $resenas->getFecha_resena(),
-                    "comentario_resena" => $resenas->getComentario_resena(),
-                ];
-                
-            }
-
-
-
         }
         include_once "view/cabecera/cabecera_carta.php";
         
