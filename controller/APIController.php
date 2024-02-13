@@ -15,9 +15,9 @@ include_once "model/resenasDAO.php";
 
 
 class APIController{    
- //http://localhost/proyectoLasala.com/drim/restaurante/?controller=API&action=mostrarResenas
     public function mostrarResenas(){
        
+ //http://localhost/proyectoLasala.com/drim/restaurante/?controller=API&action=mostrarResenas -> Esta es la url en el fetch
         
             $allResenas = resenasDAO::getAllResenas(); //puedes hacer un select de pedidos aqui, o un insert o lo que quieras, utilizando el MODELO
             $arrayResenas = [];
@@ -30,7 +30,7 @@ class APIController{
                     "fecha_resena" => $resenas->getFecha_resena(),
                     "comentario_resena" => $resenas->getComentario_resena(),
                 ];
-                var_dump($arrayResenas);
+                // var_dump($arrayResenas);
             }
 
             
@@ -38,6 +38,6 @@ class APIController{
             // y se los devuelves al JS
             echo json_encode($arrayResenas, JSON_UNESCAPED_UNICODE) ; 
             return $arrayResenas; //return para salir de la funcion
-
     }
+    
 }
