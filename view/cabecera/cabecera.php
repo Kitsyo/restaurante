@@ -12,6 +12,7 @@
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets\css\full_estil.css" rel="stylesheet" type="text/css" media="screen">
 </head>
+<header>
     <nav class="navbar navbar-expand-md container-fluid header_nav sticky-top">
       <div class="container-fluid d-flex justify-content-center align-items-center">
         <a class="navbar-brand" href="<?=url."?controller=producto&action=producto"?>"><img src="assets/images/logo.png" alt="Logo de la pagina web"></a>

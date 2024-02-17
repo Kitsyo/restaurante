@@ -92,6 +92,20 @@ main{
     width: 1175px;
     margin-top: 30px;
 }
+/* Comentario */
+.comentario{
+    border:solid;
+    border-color: #adb5bd;
+    width: 620px;
+    height: auto;
+}
+.review {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #F9E5B9;
+  }
 /* Carro */
 .span-prueba{
     font-family: "roboto";
@@ -358,7 +372,7 @@ h2{
     color:#004797;
 }
 h3{
-    font-family: "cocogose";
+    font-family: "roboto-b";
     text-decoration: none;
     color:#004797;
 }

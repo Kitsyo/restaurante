@@ -7,6 +7,7 @@ class Resenas{
     private $resena_id;
     private $cliente_id;
     private $pedido_id;
+    private $usuario;
     private $valoracion;
     private $fecha_resena;
     private $comentario_resena;
@@ -107,6 +108,20 @@ class Resenas{
      */ 
     public function setComentario_resena($comentario_resena){
         $this->comentario_resena = $comentario_resena;
+        return $this;
+    }/**
+     * Get the value of usuario
+     */ 
+    public function getUsuario(){
+        return $this->usuario;
+    }
+    /**
+     * Set the value of usuario
+     *
+     * @return  self
+     */ 
+    public function setUsuario($usuario){
+        $this->usuario = $usuario;
         return $this;
     }
    

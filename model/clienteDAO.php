@@ -65,5 +65,21 @@ class clienteDAO{
 
         return $result;
     }
+    public static function getNombreCliente($id){
+        //preparamos la consulta
+        $con = DataBase::connect(); 
+
+        $stmt = $con->prepare("SELECT email FROM clientes WHERE cliente_id = ?");
+        $stmt->bind_param("i",$id);
+
+        //ejecutamos la consulta
+        $stmt->execute();
+        $result=$stmt->get_result()->fetch_object('clientes');
+        // var_dump($result);
+        $con->close();
+        //Alamcenamos el resultado en una lista
+
+        return $result;
+    }
     
 }

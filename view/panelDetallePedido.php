@@ -6,7 +6,7 @@
       <h2 class="nom-res-detall">Detalles de los pedidos de <?=$email_user?></h2>
     </div>
     <div class="col-12 d-none d-md-block container rounded d-flex justify-content-center align-items-center" id="prueba">
-        <a href="#"><img src="assets/images/resenas.png" alt="..."></a>
+        <a href="<?=url."?controller=API&action=mostrarAllResenas"?>"><img src="assets/images/resenas.png" alt="..."></a>
     </div>
     <div class="container text-center d-flex justify-content-center ">
       <div class="row">

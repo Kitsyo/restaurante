@@ -40,7 +40,7 @@
     </div>
   </section>
   <div class="col-12 d-none d-md-block container rounded d-flex justify-content-center align-items-center" id="prueba">
-    <a href="#"><img src="assets/images/resenas.png" alt="..."></a>
+    <a href="<?=url."?controller=API&action=mostrarAllResenas"?>"><img src="assets/images/resenas.png" alt="..."></a>
   </div>
   <section>
     <div class="container d-flex justify-content-xl-start mt-4 mb-4 justify-content-md-center justify-content-sm-center">
